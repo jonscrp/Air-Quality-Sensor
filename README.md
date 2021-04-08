@@ -1,34 +1,35 @@
-# Air Quality Sensors
+# Air Quality Sensor 🪴 
 
-/*
- Welcome to our ASRC Citizen Sensors Community! We're still building this space but feel free to utilize the materials available.
- Contents:
- 
- --CO2 Arduino Code Explanation: A break down of the different sections of code for coding beginners
- 
- --Citizen Sensors-DIY CO2 How To.pdf : A step by step guide to creating your own DIY CO2 Sensor
- 
- --Co2 Sensor Materials and Purchasing List.xlsx : Spreadsheet of all the materials and links to purchase
+ Welcome to our ASRC Citizen Sensors Community! We're still building this space but feel free to utilize the materials available.  
 
---Code-README.md : Readme for the RTC_SD_LCD_K30_v1.1.ino code
+Contact  [kkrueger@gc.cuny.edu](mailto:kkrueger@gc.cuny.edu)  if you have any questions we'll try to answer!
 
---Intro to Calibrating CO2 sensors (1).pdf : How to Calibrate the CO2 Sensor. (most new sensors don't need to be calibrated, but it's a good check)
+**Table of Contents:**
 
---Components and Assembly Curriculum : A 2 hours workshop guide to assemble and test the CO2 Sensors. (all modifications will need to be completed in the how-to guide before this)
+   * [Community Sensor Lab - Air Quality Sensor](#floodsense-project-sensor-experiments)
+      * [Versions ](#versions🛠)
+        * [AQS - v1](#air-quality-sensor-v1)
+        * [AQS - v2](#air-quality-sensor-v2)
+      * [Technologies](#sensor-technologies)
+         * [Arduino boards](#arduino-boards)
+         * [Sensors](#sensors)
+      * [Data Collection via HTTP](#experiment-reports)
 
---RTC_SD_LCD_K30_v1.1.ino : Arduino code to run the fully assembled system
+## Versions🛠
+### Air-Quality-Sensor-v1
+Code from the first version of the Air Quality Sensor can be seen on the branch [Version-1](https://github.com/Community-Sensor-Lab/Air-Quality-Sensor/tree/Version-1)
+### AQS - v2
+This is the repository with the latest code
+## Technologies💡
 
---readCO2.ino : Simple code to read in value from the CO2 Sensor and Arduino only
+|    Assembly Parts🧰    |       Image           |       Purpose           | Link |
+|----------------|-------------------------------|-----------------------------|----------------------------|
+||`'Isn't this fun?'`            |'Isn't this fun?'            |
+|Quotes          |`"Isn't this fun?"`            |"Isn't this fun?"            |
+|Dashes          |`-- is en-dash, --- is em-dash`|-- is en-dash, --- is em-dash|
 
-Check out our demo video at https://youtu.be/BxUkMSFgT1w
 
-Contact kkrueger@gc.cuny.edu if you have any questions we'll try to answer!
-
-*/
-```
-// decoder variable contains battery and distance
-
-}
-  
-}
-```
+| --- |---| ---|
+| ffsddsf | ffsfsdf |
+| ffsddsf | ffsfsdf |
+## WiFi🌐          
