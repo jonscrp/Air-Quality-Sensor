@@ -28,8 +28,7 @@ Contact kkrueger@gc.cuny.edu if you have any questions we'll try to answer!
 ```
 // decoder variable contains battery and distance
 
-function Decoder(b, port) {
-
+}
   
 }
 ```
