@@ -25,13 +25,12 @@ This is the repository with the latest code
 
 |    Boards    |       Image           |       Purpose           | Link |
 |----------------|-------------------------------|-----------------------------|----------------------------|
-|Terminal Block (Base)|![terminal block](https://media.digikey.com/Photos/Adafruit%20Industries%20LLC/2926-Contents.jpg)|Used to keep everything together. Sensors are placed here      |[Adafruit](https://www.digikey.com/en/products/detail/adafruit-industries-llc/2926/5959339?s=N4IgTCBcDaIGYFMCGAXAFggTgdwJYDsBzAAhSwFsCkAbYgI2oHsBjAaxAF0BfIA)
-|Display Board (OLED)|      ![OLED](https://media.digikey.com/Photos/Adafruit%20Industries%20LLC/MFG_2900.jpg)     |Programed to show values for gases or particles and can graph functions|
+|Terminal Block (Base)| <img src="https://media.digikey.com/Photos/Adafruit%20Industries%20LLC/2926-Contents.jpg" width=100% >  |Used to keep everything together. Sensors are placed here      |[Adafruit](https://www.digikey.com/en/products/detail/adafruit-industries-llc/2926/5959339?s=N4IgTCBcDaIGYFMCGAXAFggTgdwJYDsBzAAhSwFsCkAbYgI2oHsBjAaxAF0BfIA)
+|Display Board (OLED)| <img src="https://media.digikey.com/Photos/Adafruit%20Industries%20LLC/MFG_2900.jpg" width=100% >    |Programed to show values for gases or particles and can graph functions|
 |Dashes          |`-- is en-dash, --- is em-dash`|-- is en-dash, --- is em-dash|
 |Dashes          |`-- is en-dash, --- is em-dash`|-- is en-dash, --- is em-dash|
 |Dashes          |`-- is en-dash, --- is em-dash`|-- is en-dash, --- is em-dash|
 | --- |---| ---|
 | ffsddsf | ffsfsdf |
 | ffsddsf | ffsfsdf |
-## WiFi🌐       
-
+## WiFi🌐          
