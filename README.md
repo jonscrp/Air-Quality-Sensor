@@ -4,7 +4,7 @@
 
 Contact  [kkrueger@gc.cuny.edu](mailto:kkrueger@gc.cuny.edu)  if you have any questions we'll try to answer!
 
-<img src="images/air-qaulity-sensor-V2.jpeg"> 
+<img src="images/air-qaulity-sensor-V2.jpeg"width=20% > 
 
 **Table of Contents:**
 
