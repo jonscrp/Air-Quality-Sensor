@@ -1,4 +1,4 @@
-# Air Quality Sensor 🪴 
+# Air Quality Sensor 🌱 
 
  Welcome to our ASRC Citizen Sensors Community! We're still building this space but feel free to utilize the materials available.  
 
