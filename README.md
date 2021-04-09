@@ -25,7 +25,7 @@ This is the repository with the latest code
 
 |    Boards    |       Image           |       Purpose           | Link |
 |----------------|-------------------------------|-----------------------------|----------------------------|
-|Terminal Block (Base)| <img src="https://media.digikey.com/Photos/Adafruit%20Industries%20LLC/2926-Contents.jpg" width="300" height = "200" >  |Used to keep everything together. Sensors are placed here      |[Adafruit](https://www.digikey.com/en/products/detail/adafruit-industries-llc/2926/5959339?s=N4IgTCBcDaIGYFMCGAXAFggTgdwJYDsBzAAhSwFsCkAbYgI2oHsBjAaxAF0BfIA)
+|Terminal Block (Base)| <img src="https://media.digikey.com/Photos/Adafruit%20Industries%20LLC/2926-Contents.jpg" width="270" height = "200" >  |Used to keep everything together. Sensors are placed here      |[Adafruit](https://www.digikey.com/en/products/detail/adafruit-industries-llc/2926/5959339?s=N4IgTCBcDaIGYFMCGAXAFggTgdwJYDsBzAAhSwFsCkAbYgI2oHsBjAaxAF0BfIA)
 |Display Board (OLED)| <img src="https://media.digikey.com/Photos/Adafruit%20Industries%20LLC/MFG_2900.jpg" width="360" height = "270" >    |Programed to show values for gases or particles and can graph functions|
 |Dashes          |`-- is en-dash, --- is em-dash`|-- is en-dash, --- is em-dash|
 |Dashes          |`-- is en-dash, --- is em-dash`|-- is en-dash, --- is em-dash|
