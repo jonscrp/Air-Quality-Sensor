@@ -34,3 +34,4 @@ This is the repository with the latest code
 | ffsddsf | ffsfsdf |
 | ffsddsf | ffsfsdf |
 ## WiFi🌐          
+<img src="images/Comm Sensor Lab V2.0Diagram.jpg"> 
