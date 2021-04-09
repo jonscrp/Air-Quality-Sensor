@@ -1,6 +1,6 @@
 # Air Quality Sensor 🌱 
 
- Welcome to our ASRC Citizen Sensors Community! We're still building this space but feel free to utilize the materials available. Contact [kkrueger@gc.cuny.edu](mailto:kkrueger@gc.cuny.edu)  if you have any questions we'll try to answer!
+ Welcome to our ASRC Citizen Sensors Community! We're still building this space but feel free to use the materials available. Contact [kkrueger@gc.cuny.edu](mailto:kkrueger@gc.cuny.edu) if you have any questions. We'll try to answer!
 
 <img src="images/air-qaulity-sensor-V2.jpeg" width="200" height = "300">     <img src="images/WIFI LOGGER CSL-AQS-V2.0.png" width="600" height = "300"> 
 
