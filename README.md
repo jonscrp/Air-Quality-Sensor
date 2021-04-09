@@ -9,8 +9,8 @@ Contact  [kkrueger@gc.cuny.edu](mailto:kkrueger@gc.cuny.edu)  if you have any qu
 **Table of Contents:**
 
    * [Community Sensor Lab - Air Quality Sensor](#floodsense-project-sensor-experiments)
-      * [Technologies](#sensor-technologies)
-         * [Arduino boards](#arduino-boards)
+      * [Technologies](#featherM0_Microcontroller_Boards)
+         * [Microcontroller boards](#arduino-boards)
          * [Sensors](#sensors)
       * [Data Collection via HTTP](#experiment-reports)
       * [Versions ](#versions-)
