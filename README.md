@@ -4,7 +4,7 @@
  
  The Air Quaity Sensor (AQS) is a low-cost, low-power DIY device with sensors for CO2, temp-pressure-relativehumidity, and PM2.5 (dust or smoke). It has an on-board logger and WiFi connectivity to Google Sheets for (almost) real time data reporting. 
 
-<img src="images/CSL-AQS-Ver2.0.jpeg" width="300" height = "200">     <img src="images/WIFI LOGGER CSL-AQS-V2.0.png" width="600" height = "300"> 
+<img src="images/CSL-AQS-Ver2.0.jpeg" width="400" height = "300">     <img src="images/WIFI LOGGER CSL-AQS-V2.0.png" width="600" height = "300"> 
 
 **Table of Contents:**
 
