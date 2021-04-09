@@ -4,6 +4,8 @@
 
 Contact  [kkrueger@gc.cuny.edu](mailto:kkrueger@gc.cuny.edu)  if you have any questions we'll try to answer!
 
+<img src="images/Comm Sensor Lab V2.0 diagram.png"> 
+
 **Table of Contents:**
 
    * [Community Sensor Lab - Air Quality Sensor](#floodsense-project-sensor-experiments)
@@ -35,3 +37,8 @@ This is the repository with the latest code
 | ffsddsf | ffsfsdf |
 ## WiFi🌐          
 <img src="images/Comm Sensor Lab V2.0 diagram.png"> 
+## Versions 🛠
+### Air-Quality-Sensor-v1
+Code from the first version of the Air Quality Sensor can be seen on the branch [Version-1](https://github.com/Community-Sensor-Lab/Air-Quality-Sensor/tree/Version-1)
+### AQS - v2
+This is the repository with the latest code
