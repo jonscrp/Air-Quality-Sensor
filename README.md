@@ -37,3 +37,23 @@ Contact  [kkrueger@gc.cuny.edu](mailto:kkrueger@gc.cuny.edu)  if you have any qu
 Code from the first version of the Air Quality Sensor can be seen on the branch [Version-1](https://github.com/Community-Sensor-Lab/Air-Quality-Sensor/tree/Version-1)
 ### AQS - v2
 This is the repository with the latest code
+
+Feather M0 Microcontroller boards
+
+Feather M0 WiFi (WINC1500)
+Featherwing Logger (RTC microSD)
+Featherwing OLED 
+Feather terminal block
+
+Sensors
+
+Sensirion SD30 CO2 NDIR
+BME280 Temp. Press. Rel Humidity 
+Sensirion SPS30 PM2.5
+
+Other necessary stuff
+
+Battery Lithium Polymer LiPo 3.7V
+Battery coin cr1220
+Memory microSD (>8GB)<img width="281" alt="image" src="https://user-images.githubusercontent.com/19189152/114201488-3f038600-9924-11eb-8e6c-756f9b7baf52.png">
+
