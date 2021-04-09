@@ -9,13 +9,13 @@ Contact  [kkrueger@gc.cuny.edu](mailto:kkrueger@gc.cuny.edu)  if you have any qu
 **Table of Contents:**
 
    * [Community Sensor Lab - Air Quality Sensor](#floodsense-project-sensor-experiments)
-      * [Versions ](#versions-)
-        * [AQS - v1](#air-quality-sensor-v1)
-        * [AQS - v2](#air-quality-sensor-v2)
       * [Technologies](#sensor-technologies)
          * [Arduino boards](#arduino-boards)
          * [Sensors](#sensors)
       * [Data Collection via HTTP](#experiment-reports)
+      * [Versions ](#versions-)
+        * [AQS - v2](#air-quality-sensor-v2)
+        * [AQS - v1](#air-quality-sensor-v1)
 
 ## Versions 🛠
 ### Air-Quality-Sensor-v1
