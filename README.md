@@ -17,13 +17,8 @@ Contact  [kkrueger@gc.cuny.edu](mailto:kkrueger@gc.cuny.edu)  if you have any qu
         * [AQS - v2](#air-quality-sensor-v2)
         * [AQS - v1](#air-quality-sensor-v1)
 
-## Versions 🛠
-### Air-Quality-Sensor-v1
-Code from the first version of the Air Quality Sensor can be seen on the branch [Version-1](https://github.com/Community-Sensor-Lab/Air-Quality-Sensor/tree/Version-1)
-### AQS - v2
-This is the repository with the latest code
 ## Technologies💡
-### Arduino-Boards
+### FeatherM0_Microcontroller_Boards
 
 |    Boards, Batteries, and Headers  |Image|       Purpose           | Link |
 |------------------------|---------------------|-----------------------------|----------------------------|
