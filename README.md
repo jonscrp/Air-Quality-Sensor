@@ -21,7 +21,7 @@
 ### FeatherM0_Microcontroller_Boards
 
 | Board | Image | Use | Link |
-|--------------------------------------|-----------------|---------------------|-------------------------------------------------|
+|---------|---------------|-----------------|-------|
 |Feather M0 WiFi (WINC1500))| <img src="images/Feather-M0-WiFi.jpeg" width="200" height = "200" >  |Wifi feather board connects Arduino to a WiFi network. The microcontroller is the brain of the system     |[Digi-Key](https://www.digikey.com/en/products/detail/adafruit-industries-llc/3010/5848448)
 |Featherwing Logger (RTC microSD)| <img src="images/Featherwing-Logger.jpeg" width="200" height = "200" >    |You can insert a microSD in the logger. The data that the sensors collect is stored here. The logger also has a real time clock. The clock keeps track of the time and date even when the Arduino is turned off|[Digi-Key](https://www.digikey.com/en/products/detail/adafruit-industries-llc/2922/5885911?s=N4IgTCBcDaIIIBE4BkDyBxdBRASgAgDEs4AVACVwHUBJAOXTwFo8cSBhPAajwGUEQAugF8gA)
 |Featherwing OLED  | <img src="images/Featherwing-OLED.jpeg" width="200" height = "200" >|Displays values for gases or particles and can graph functions|[Digi-Key](https://www.digikey.com/en/products/detail/adafruit-industries-llc/2900/5810890)
