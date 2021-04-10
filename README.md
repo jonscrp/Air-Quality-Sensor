@@ -20,16 +20,14 @@
 ## Technologies💡
 ### FeatherM0_Microcontroller_Boards
 
-|    Boards, Batteries, and Headers  |Image|       Purpose           | Link |
-|------------------------|---------------------|-----------------------------|----------------------------|
-|Terminal Block (Base)| <img src="https://media.digikey.com/Photos/Adafruit%20Industries%20LLC/2926-Contents.jpg" width="200" height = "200" >  |Used to keep everything together. Sensors are connected here      |[Adafruit](https://www.adafruit.com/product/2926)
-|Display Board (OLED)| <img src="https://media.digikey.com/Photos/Adafruit%20Industries%20LLC/MFG_2900.jpg" width="200" height = "200" >    |Displays values for gases or particles and can graph functions|[Adafruit](https://www.adafruit.com/product/2900)
-|Battery | <img src="https://media.digikey.com/Photos/Micropower-Battery/MFG_REN-CR1220.IB-BULK.jpg" width="200" height = "200" >|-- is en-dash, --- is em-dash|
-|Battery | <img src="https://media.digikey.com/Photos/Adafruit%20Industries%20LLC/MFG_354.jpg" width="200" height = "200" >|-- is en-dash, --- is em-dash|
-|Dashes          |`-- is en-dash, --- is em-dash`|-- is en-dash, --- is em-dash|
-| --- |---| ---|
-| ffsddsf | ffsfsdf |
-| ffsddsf | ffsfsdf |
+| Board | Image | Use | Link |
+|---------|---------------|-----------------|-------|
+|Feather M0 WiFi (WINC1500))| <img src="https://images/Feather-M0-WiFi.jpeg" width="200" height = "200" >  |Wifi feather board connects Arduino to a WiFi network. The microcontroller is the brain of the system     |[Digi-Key](https://www.digikey.com/en/products/detail/adafruit-industries-llc/3010/5848448)
+|Featherwing Logger (RTC microSD)| <img src="images/Featherwing-Logger.jpeg" width="200" height = "200" >    |You can insert a microSD in the logger. The data that the sensors collect is stored here. The logger also has a real time clock. The clock keeps track of the time and date even when the Arduino is turned off|[Digi-Key](https://www.digikey.com/en/products/detail/adafruit-industries-llc/2922/5885911?s=N4IgTCBcDaIIIBE4BkDyBxdBRASgAgDEs4AVACVwHUBJAOXTwFo8cSBhPAajwGUEQAugF8gA)
+|Featherwing OLED  | <img src="images/Featherwing-OLED.jpeg" width="200" height = "200" >|Displays values for gases or particles and can graph functions|[Digi-Key](https://www.digikey.com/en/products/detail/adafruit-industries-llc/2900/5810890)
+|Feather Terminal Block | <img src="images/Feather-Terminal-Block.jpeg" width="200" height = "200" >|The base holds all the components together. Sensors are placed here and all other boards are stacked on top|[Digi-Key](https://www.digikey.com/en/products/detail/adafruit-industries-llc/2926/5959339?s=N4IgTCBcDaIGYFMCGAXAFggTgdwJYDsBzAAhSwFsCkAbYgI2oHsBjAaxAF0BfIA)
+
+### Sensors
 ## WiFi🌐          
 <img src="images/Comm Sensor Lab V2.0 diagram.png"> 
 ## Versions 🛠
@@ -37,23 +35,3 @@
 Code from the first version of the Air Quality Sensor can be seen on the branch [Version-1](https://github.com/Community-Sensor-Lab/Air-Quality-Sensor/tree/Version-1)
 ### AQS - v2
 This is the repository with the latest code
-
-Feather M0 Microcontroller boards
-
-Feather M0 WiFi (WINC1500)
-Featherwing Logger (RTC microSD)
-Featherwing OLED 
-Feather terminal block
-
-Sensors
-
-Sensirion SD30 CO2 NDIR
-BME280 Temp. Press. Rel Humidity 
-Sensirion SPS30 PM2.5
-
-Other necessary stuff
-
-Battery Lithium Polymer LiPo 3.7V
-Battery coin cr1220
-Memory microSD (>8GB)<img width="281" alt="image" src="https://user-images.githubusercontent.com/19189152/114201488-3f038600-9924-11eb-8e6c-756f9b7baf52.png">
-
