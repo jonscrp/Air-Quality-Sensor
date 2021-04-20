@@ -21,7 +21,7 @@
 ## Technologies💡
 ### FeatherM0-Microcontroller-Boards
 
-| Board | Image | Use | Purchase Link |
+| Board | Board Image | Use | Purchase Link |
 |----------------|-------------------------------|----------|:--------------------------:|
 |Feather M0 WiFi (WINC1500))| <img src="images/Feather-M0-WiFi.jpeg" width="200" height = "200" >  |Connects Arduino to a WiFi network. The microcontroller is the brain of the system|[Digi-Key](https://www.digikey.com/en/products/detail/adafruit-industries-llc/3010/5848448)
 |Featherwing Logger (RTC microSD)| <img src="images/Featherwing-Logger.jpeg" width="200" height = "200"> | Can insert a microSD. Data is stored here. The logger also has a clock that keeps track of the time even when the Arduino is turned off|[Digi-Key](https://www.digikey.com/en/products/detail/adafruit-industries-llc/2922/5885911?s=N4IgTCBcDaIIIBE4BkDyBxdBRASgAgDEs4AVACVwHUBJAOXTwFo8cSBhPAajwGUEQAugF8gA)
@@ -29,14 +29,14 @@
 |Feather Terminal Block | <img src="images/Feather-Terminal-Block.jpeg" width="200" height = "200" >|Holds all the components together. Sensors are placed here and all other boards are stacked on top|[Digi-Key](https://www.digikey.com/en/products/detail/adafruit-industries-llc/2926/5959339?s=N4IgTCBcDaIGYFMCGAXAFggTgdwJYDsBzAAhSwFsCkAbYgI2oHsBjAaxAF0BfIA)
 
 ### Sensors
-| Sensor | Image | Use | Purchase Link |
+| Sensor | Sensor Image | Use | Purchase Link |
 |----------------|-------------------------------|----------|:--------------------------:|
 |Sensirion SD30 CO2 NDIR| <img src="images/Sensirion-SD30-CO2-NDIR.jpeg" width="200" height = "200" >  |Collects data on CO2 PPM|[Digi-Key](https://www.digikey.com/en/products/detail/sensirion-ag/SCD30/8445334?s=N4IgTCBcDaIMIHkwAIDKBRAcqhAlZAkmHMgLIIAiAQgKqrIAKA6qSALoC%2bQA)
 |BME280 Temp. Press. Rel Humidity| <img src="images/Featherwing-Logger.jpeg" width="200" height = "200"> | Collects data of temperature, pressure and relative humidity|[Digi-Key](https://www.digikey.com/en/products/detail/adafruit-industries-llc/2922/5885911?s=N4IgTCBcDaIIIBE4BkDyBxdBRASgAgDEs4AVACVwHUBJAOXTwFo8cSBhPAajwGUEQAugF8gA)
 |Sensirion SPS380 PM2.5| <img src="images/Sensirion-SPS380-PM2.5.jpeg" width="200" height = "200" >|Collects data on particulate matter|[Digi-Key](https://www.digikey.com/en/products/detail/sensirion-ag/SPS30/9598990)
 
 ### Additional-Necessary-Technologies
-| Part | Image | Use | Purchase Link |
+| Part | Part Image | Use | Purchase Link |
 |----------------|-------------------------------|----------|:--------------------------:|
 |Battery Lithium Polymer LiPo 3.7V| <img src="images/Battery-Lithium-Polymer-LiPo-3.7V.jpeg" width="200" height = "200"> |Device's battery|[Digi-Key](https://www.digikey.com/en/products/detail/adafruit-industries-llc/354/5054541)
 |Battery Coin cr1220| <img src="images/Battery-Coin-cr1220.jpeg" width="200" height = "200"> |Clock Battery|[Digi_Key](https://www.digikey.com/en/products/detail/renata-batteries/RENATA-CR1220-TS-1/13283109)
