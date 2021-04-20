@@ -24,9 +24,9 @@
 | Board | Board Image | Use | Purchase Link |
 |----------------|-------------------------------|----------|:--------------------------:|
 |Feather M0 WiFi (WINC1500))| <img src="images/Feather-M0-WiFi.jpeg" width="200" height = "200" >  |Connects to a WiFi network. Brain of the system|[Digi-Key](https://www.digikey.com/en/products/detail/adafruit-industries-llc/3010/5848448)
-|Featherwing Logger (RTC microSD)| <img src="images/Featherwing-Logger.jpeg" width="200" height = "200"> | Slot for microSD. Data is stored here. Has a clock that keeps track of the time even when off|[Digi-Key](https://www.digikey.com/en/products/detail/adafruit-industries-llc/2922/5885911?s=N4IgTCBcDaIIIBE4BkDyBxdBRASgAgDEs4AVACVwHUBJAOXTwFo8cSBhPAajwGUEQAugF8gA)
+|Featherwing Logger (RTC microSD)| <img src="images/Featherwing-Logger.jpeg" width="200" height = "200"> |Slot for microSD. Data is stored here. Has a clock that keeps track of the time even when off|[Digi-Key](https://www.digikey.com/en/products/detail/adafruit-industries-llc/2922/5885911?s=N4IgTCBcDaIIIBE4BkDyBxdBRASgAgDEs4AVACVwHUBJAOXTwFo8cSBhPAajwGUEQAugF8gA)
 |Featherwing OLED  | <img src="images/Featherwing-OLED.jpeg" width="200" height = "200" >|Displays values for gases or particles and can graph functions|[Digi-Key](https://www.digikey.com/en/products/detail/adafruit-industries-llc/2900/5810890)
-|Feather Terminal Block | <img src="images/Feather-Terminal-Block.jpeg" width="200" height = "200" >|Holds all the components together. Sensors are placed here and all other boards are stacked on top|[Digi-Key](https://www.digikey.com/en/products/detail/adafruit-industries-llc/2926/5959339?s=N4IgTCBcDaIGYFMCGAXAFggTgdwJYDsBzAAhSwFsCkAbYgI2oHsBjAaxAF0BfIA)
+|Feather Terminal Block | <img src="images/Feather-Terminal-Block.jpeg" width="200" height = "200" >|Holds all the components together|[Digi-Key](https://www.digikey.com/en/products/detail/adafruit-industries-llc/2926/5959339?s=N4IgTCBcDaIGYFMCGAXAFggTgdwJYDsBzAAhSwFsCkAbYgI2oHsBjAaxAF0BfIA)
 
 ### Sensors
 | Sensor | Sensor Image | Use | Purchase Link |
