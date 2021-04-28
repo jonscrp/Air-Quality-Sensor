@@ -32,6 +32,8 @@
 
 char ssid[] = SECRET_SSID;        // your network SSID (name)
 char pass[] = SECRET_PASS;    // your network password (use for WPA, or use as key for WEP)
+char ssid2[] = SECRET_SSID2;        // your network SSID (name)
+char pass2[] = SECRET_PASS2;
 
 int status = WL_IDLE_STATUS;
 char server[] = "script.google.com"; // name address for Google scripts as we are communicationg with the scripg (using DNS)
@@ -40,6 +42,7 @@ float C; // CO2
 float T; // temperature
 float P; // pressure
 float H; // humidity
+bool wifion = false;
 
 WiFiSSLClient client; // make SSL client
 // these are the commands to be sent to the google script: namely add a row to last in Sheet1 with the values TBD
@@ -47,7 +50,7 @@ String payload_base =  "{\"command\":\"appendRow\",\"sheet_name\":\"Sheet1\",\"v
 String payload = "";
 
 RTC_PCF8523 rtc; // Real Time Clock for RevB Adafruit logger shield
-Adafruit_SSD1306 display = Adafruit_SSD1306(128, 32, &Wire); // the oled display
+Adafruit_SSD1306 display = Adafruit_SSD1306(128, 32, & Wire); // the oled display
 Adafruit_BME280 bme; // the bme tprh sensor
 File logfile;  // the logging file
 SCD30 airSensor; // sensirion scd30 ndir
@@ -82,7 +85,7 @@ void setup(void) {
   // TO SET TIME at compile: run once to syncro then run again with line commented out
   //  rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
   delay(2000);
-  //Serial.println("Date______\tTime____\tCO2ppm\tTempC\tRH%\tTempC\tP_mBar\tRH%\tVbatMV\tstatus");
+  Serial.println("Date______\tTime____\tCO2ppm\tTempC\tRH%\tTempC\tP_mBar\tRH%\tVbatMV\tstatus");
   logfile.println("Date______\tTime____\tCO2ppm\tTempC\tRH%\tTempC\tP_mBar\tRH%\tVbatMV\tstatus");
 }
 
@@ -132,12 +135,15 @@ void loop(void)  {
   sprintf(outstr, "%02u:%02u:%02u,%02u:%02u:%02u,%.2d,%.2f,%.2f,%.2f,%.2f,%.2f,%.2f,%x",
           now.year(), now.month(), now.day(), now.hour(), now.minute(), now.second(),
           co2, temp, rh, T, P, H, measuredvbat, stat);
-  //Serial.println("Date    \tTime      \tCO2\tTemp(C)\tRH(%)\tvbat(mV)\tstatus");
-  //Serial.println(outstr);
+  Serial.println("Date    \tTime      \tCO2\tTemp(C)\tRH(%)\tvbat(mV)\tstatus");
+  Serial.println(outstr);
   logfile.println(outstr);
   logfile.flush();   // Write to disk. Uses 2048 bytes of I/O to SD card, power and takes time
 
   payloadUpload(outstr);
+  if (WiFi.status() != WL_CONNECTED) {
+        Serial.println("No WiFi");
+      }
 
   for (int i = 1; i <= 2; i++)  {  // 32s =2x16s sleep
     displayState = toggleButton(BUTTON_A, displayState, buttonAstate, lastTimeToggle, timeDebounce);
@@ -148,14 +154,14 @@ void loop(void)  {
       display.print("  V "); display.println(measuredvbat);
       display.print("T C     "); display.println(T);
       display.print("P mBar  "); display.println(P);
-      display.print("RH%     "); display.println(H);
+      display.print("RH%     "); display.println(H); 
       display.display();
     }
     else  {  // turn display off
       display.clearDisplay();
       display.display();
     }
-    int sleepMS = Watchdog.sleep();// remove comment after final push
-    //delay(16000);
+    //int sleepMS = Watchdog.sleep();// remove comment after final push
+    delay(16000);
   }
 }

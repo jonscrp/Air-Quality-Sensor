@@ -17,3 +17,7 @@
 // Hannah's home wifi
 //#define SECRET_SSID "SingleDigitsGuest"
 //#define SECRET_PASS ""
+
+//for third attempt
+#define SECRET_SSID2 "iPhone"
+#define SECRET_PASS2 "forarduino"
