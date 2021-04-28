@@ -155,8 +155,6 @@ void loop(void)  {
       display.print("T C     "); display.println(T);
       display.print("P mBar  "); display.println(P);
       display.print("RH%     "); display.println(H); 
-      //if (WiFi.status() != WL_CONNECTED) {display.println(" NW");}
-      //else display.print("  No WiFi"); 
       display.display();
     }
     else  {  // turn display off
