@@ -41,7 +41,7 @@
 |Battery Lithium Polymer LiPo 3.7V| <img src="images/Battery-Lithium-Polymer-LiPo-3.7V.jpeg" width="200" height = "200"> |Device's battery|[Digi-Key](https://www.digikey.com/en/products/detail/adafruit-industries-llc/354/5054541)
 |Battery Coin cr1220| <img src="images/Battery-Coin-cr1220.jpeg" width="200" height = "200"> |Clock Battery|[Digi_Key](https://www.digikey.com/en/products/detail/renata-batteries/RENATA-CR1220-TS-1/13283109)
 |Micro SD| <img src="images/Micro-SD.jpeg" width="200" height = "200">|non volatile memory|[Digi-Key](https://www.digikey.com/en/products/detail/delkin-devices-inc/USDCOEM-16GB/13882332)
-|Jumper Wires| <img src="images/Micro-SD.jpeg" width="200" height = "200">|connecting|[Adafruit](https://www.adafruit.com/product/1954)
+|Jumper Wires| <img src="images/1954-02.jpg" width="200" height = "200">|connecting|[Adafruit](https://www.adafruit.com/product/1954)
 
 ## Post🌐          
 <img src="images/Comm Sensor Lab V2.0 diagram.png"> 
