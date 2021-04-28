@@ -40,7 +40,7 @@
 |----------------|-------------------------------|----------|:--------------------------:|
 |Battery Lithium Polymer LiPo 3.7V| <img src="images/Battery-Lithium-Polymer-LiPo-3.7V.jpeg" width="200" height = "200"> |Device's battery|[Digi-Key](https://www.digikey.com/en/products/detail/adafruit-industries-llc/354/5054541)
 |Battery Coin cr1220| <img src="images/Battery-Coin-cr1220.jpeg" width="200" height = "200"> |Clock Battery|[Digi_Key](https://www.digikey.com/en/products/detail/renata-batteries/RENATA-CR1220-TS-1/13283109)
-|Micro SD| <img src="images/Micro-SD.jpeg" width="200" height = "200">|memory|[Digi-Key](https://www.digikey.com/en/products/detail/sensirion-ag/SPS30/9598990)
+|Micro SD| <img src="images/Micro-SD.jpeg" width="200" height = "200">|memory|[Digi-Key](https://www.digikey.com/en/products/detail/delkin-devices-inc/USDCOEM-16GB/13882332)
 
 ## Post🌐          
 <img src="images/Comm Sensor Lab V2.0 diagram.png"> 
