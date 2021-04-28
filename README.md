@@ -21,7 +21,7 @@
 ## Technologies💡
 ### FeatherM0-Microcontroller-Boards
 
-| Board | Board Image | Use | Purchase Link |
+| Board | Board Image | Use | Link |
 |----------------|-------------------------------|----------|:--------------------------:|
 |Feather M0 WiFi (WINC1500))| <img src="images/Feather-M0-WiFi.jpeg" width="200" height = "200" >  |Connects to WiFi network. Brain of the system|[Adafruit](https://www.adafruit.com/product/3010)
 |Featherwing Logger (RTC microSD)| <img src="images/Featherwing-Logger.jpeg" width="200" height = "200"> |Slot for microSD. Has a real time clock|[Adafruit](https://www.adafruit.com/product/2922)
