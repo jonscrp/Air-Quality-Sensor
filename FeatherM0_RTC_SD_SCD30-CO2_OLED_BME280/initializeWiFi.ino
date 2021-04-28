@@ -11,18 +11,39 @@ void initializeWiFi() {
     //while (true);
     delay(500);
   }
-  while (status != WL_CONNECTED) {
-    Serial.print("Attempting to connect to SSID: ");
-    Serial.println(ssid);
-    status = WiFi.begin(ssid, pass);   // Connect to WPA/WPA2 network. Change this line if using open or WEP network:
-    delay(10000);
-    Serial.println(WiFi.status());     // output some diagnostic info
+
+  int i = 0;
+  while (i < 5) {   
+    if (i==5) break;   
+    i++;
+
+    if (status != WL_CONNECTED) {
+      
+      if (i < 3) {
+        Serial.print("Attempting to connect to SSID: ");
+        Serial.println(ssid2);
+        status = WiFi.begin(ssid2, pass2);   // Connect to WPA/WPA2 network. Change this line if using open or WEP network:
+        if (status == WL_CONNECTED) i=5;
+      }
+      if (i == 3|| i == 4) {
+        Serial.print("Attempting to connect to SSID: ");
+        Serial.println(ssid);
+        status = WiFi.begin(ssid, pass);   // Connect to WPA/WPA2 network. Change this line if using open or WEP network:
+        if (status == WL_CONNECTED) i=5;
+      }
+      delay(10000);
+      Serial.println(WiFi.status());     // output some diagnostic info
+
+      }
+    
   }
   printWiFiStatus();
+
 }
 
 void printWiFiStatus() {
   // print the SSID of the network you're attached to:
+  if (status == WL_CONNECTED){
   Serial.print("Connected to WiFi ");
   Serial.print("SSID: ");
   Serial.println(WiFi.SSID());
@@ -36,4 +57,5 @@ void printWiFiStatus() {
   Serial.print(rssi);
   Serial.println(" dBm");
   Serial.println();
+  }
 }

@@ -2,6 +2,9 @@
   Write to Google Sheets through a Wifi POST HTTP1.1 request to a Google script.
 */
 void payloadUpload(String payload) {
+  if (WiFi.status() == WL_CONNECTED) {
+    
+
 
   if (!client.connected()) {
     initializeClient();
@@ -11,7 +14,7 @@ void payloadUpload(String payload) {
   Serial.print("payload: "); Serial.println(payload);
 
   // Make a HTTP request:
-  client.println("POST /macros/s/AKfycbzLiMdE-5IlsuBNTyAcxUdHkxCu7B1Sl_mVJF2-Tge5Y8Zv66d9/exec?value=Hello HTTP/1.1"); // for ricado's googlesheet
+  client.println("POST /macros/s/AKfycbz9ayTQhGrJjgftPum5e2-s6uDvvFLXmuj1AQkhrODPRNgP_QMG3bkNKPlMhDI47E7Brg/exec?value=Hello HTTP/1.1"); // for ricado's googlesheet
   client.println("Host: script.google.com");
   client.println("Content-Type: application/x-www-form-urlencoded");
   //client.println("Connection: close");
@@ -33,6 +36,9 @@ void payloadUpload(String payload) {
   if (!client.connected()) {
     Serial.println("disconnected from server.");
   }
+  
+  }
+  else Serial.println("No WiFi Connection. Cannot complete payload");;
 }
 
 
