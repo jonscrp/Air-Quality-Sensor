@@ -12,7 +12,7 @@
       * [Technologies](#technologies)
          * [Microcontroller boards](#featherM0-Microcontroller-Boards)
          * [Sensors](#sensors)
-         * [Additional Necessary Technologies](#additional-Necessary-Technologies)
+         * [Additional Parts](#additional-Parts)
       * [Data Collection via HTTP](#experiment-reports)
       * [Versions ](#versions-)
         * [AQS - v2](#air-quality-sensor-v2)
@@ -35,7 +35,7 @@
 |BME280 Temp. Press. Rel Humidity| <img src="images/BME280.jpeg" width="200" height = "200"> | Measures temperature C, pressure hPa and relative humidity %|[Digi-Key](https://www.digikey.com/en/products/detail/adafruit-industries-llc/2652/5604372)
 |Sensirion SPS380 PM2.5| <img src="images/Sensirion-SPS380-PM2.5.jpg" width="200" height = "200" >|Measures particulate matter PM2.5+|[Digi-Key](https://www.digikey.com/en/products/detail/sensirion-ag/SPS30/9598990)
 
-### Additional-Necessary-Technologies
+### Additional-Parts
 | Part | Part Image | Use | Purchase Link |
 |----------------|-------------------------------|----------|:--------------------------:|
 |Battery Lithium Polymer LiPo 3.7V| <img src="images/Battery-Lithium-Polymer-LiPo-3.7V.jpeg" width="200" height = "200"> |Device's battery|[Digi-Key](https://www.digikey.com/en/products/detail/adafruit-industries-llc/354/5054541)
