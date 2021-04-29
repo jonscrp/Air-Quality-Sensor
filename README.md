@@ -14,6 +14,7 @@
          * [Sensors](#sensors)
          * [Additional Parts](#additional-Parts)
       * [Getting Started](#getting-started)
+      * [Google Spreadsheet](#google-spreadsheet)
       * [Data Collection via HTTP](#experiment-reports)
       * [Versions ](#versions-)
         * [AQS - v2](#air-quality-sensor-v2)
@@ -47,13 +48,13 @@
 ## Diagram          
 <img src="images/Comm Sensor Lab V2.0 diagram.png"> 
 
-## Getting Started
+## Getting-Started
 For instructions on getting started with Arduino and setting up the necessary libraries and packages for the Air Quality Sensor, take a look at our guide:
 [Installing Arduino and Getting Started](https://docs.google.com/document/d/16o8Np3GaZfSjQlxNWIgi12ycb2CosCJ2blwEGiTplbA/edit?usp=sharing)
 
-## Google Spreadsheet
+## Google-Spreadsheet
 For instructions on getting the AQS connected with a Google Spreadsheet, take a lookm at our guide
-[IPosting Data to a Google Spreadsheet](https://docs.google.com/document/d/1yNolfJr7s9rs_ewV7vN-bUsllEiPPxo2xeQbsmszQKE/edit?usp=sharing)
+[Posting Data to a Google Spreadsheet](https://docs.google.com/document/d/1yNolfJr7s9rs_ewV7vN-bUsllEiPPxo2xeQbsmszQKE/edit?usp=sharing)
 
 
 
