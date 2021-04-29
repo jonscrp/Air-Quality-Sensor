@@ -2,7 +2,7 @@
 
  Welcome to our ASRC Citizen Sensors Community! We're still building this space but feel free to use the materials available. Contact [kkrueger@gc.cuny.edu](mailto:kkrueger@gc.cuny.edu) if you have any questions. We'll try to answer as soon as possible!
  
- The Air Quaity Sensor (AQS) is a low-cost, low-power DIY device with sensors for CO2, temp-pressure-relativehumidity, and PM2.5 (dust or smoke). It has an on-board logger and WiFi connectivity to Google Sheets for (almost) real time data reporting. 
+ The Air Quaity Sensor (AQS) is a **low-cost**, **low-power** DIY device with sensors for **CO2**, **temp-pressure-relativehumidity**, and **PM2.5** (dust or smoke). It has an on-board logger and WiFi connectivity to Google Sheets for (almost) real time data reporting. 
 
 <img src="images/air-qaulity-sensor-V2.jpeg" width="200" height = "300"> <img src="images/WIFI LOGGER CSL-AQS-V2.0.png" width="600" height = "300"> 
 
@@ -10,9 +10,10 @@
 
    * [Community Sensor Lab - Air Quality Sensor]
       * [Technologies](#technologies)
-         * [Microcontroller boards](#featherM0-Microcontroller-Boards)
+         * [Microcontroller Boards](#featherM0-Microcontroller-Boards)
          * [Sensors](#sensors)
          * [Additional Parts](#additional-Parts)
+      * [Getting Started](#getting-started)
       * [Data Collection via HTTP](#experiment-reports)
       * [Versions ](#versions-)
         * [AQS - v2](#air-quality-sensor-v2)
@@ -43,8 +44,18 @@
 |Micro SD| <img src="images/Micro-SD.jpeg" width="200" height = "200">|non volatile memory|[Digi-Key](https://www.digikey.com/en/products/detail/delkin-devices-inc/USDCOEM-16GB/13882332)
 |Jumper Wires| <img src="images/1954-02.jpg" width="200" height = "200">|connecting|[Adafruit](https://www.adafruit.com/product/1954)
 
-## Post🌐          
+## Diagram          
 <img src="images/Comm Sensor Lab V2.0 diagram.png"> 
+
+## Getting Started
+For instructions on getting started with Arduino and setting up the necessary libraries and packages for the Air Quality Sensor, take a look at our guide:
+[Installing Arduino and Getting Started](https://docs.google.com/document/d/16o8Np3GaZfSjQlxNWIgi12ycb2CosCJ2blwEGiTplbA/edit?usp=sharing)
+
+## Google Spreadsheet
+For instructions on getting the AQS connected with a Google Spreadsheet, take a lookm at our guide
+[IPosting Data to a Google Spreadsheet](https://docs.google.com/document/d/1yNolfJr7s9rs_ewV7vN-bUsllEiPPxo2xeQbsmszQKE/edit?usp=sharing)
+
+
 
 ## Versions 🛠
 ### Air-Quality-Sensor-v2
