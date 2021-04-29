@@ -52,7 +52,7 @@
 For instructions on getting started with Arduino and setting up the necessary libraries and packages for the Air Quality Sensor, take a look at our guide:
 [Installing Arduino and Getting Started](https://docs.google.com/document/d/16o8Np3GaZfSjQlxNWIgi12ycb2CosCJ2blwEGiTplbA/edit?usp=sharing)
 
-## Google-Spreadsheet
+## HTML POSTing to Google Spreadsheet
 For instructions on getting the AQS connected with a Google Spreadsheet, take a lookm at our guide
 [Posting Data to a Google Spreadsheet](https://docs.google.com/document/d/1yNolfJr7s9rs_ewV7vN-bUsllEiPPxo2xeQbsmszQKE/edit?usp=sharing)
 
