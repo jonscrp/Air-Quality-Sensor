@@ -13,7 +13,7 @@
          * [Microcontroller Boards](#featherM0-Microcontroller-Boards)
          * [Sensors](#sensors)
          * [Additional Parts](#additional-Parts)
-      * [Getting Started with Arduino](#getting-started-)
+      * [Getting Started with Arduino](#getting-started)
       * [Downloading Code from Github](#using-github-)
       * [Connecting to WiFi + Google Spreadsheet](#http-request-to-google-spreadsheet-)
        * [Versions ](#versions-)
