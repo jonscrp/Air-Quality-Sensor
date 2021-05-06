@@ -13,12 +13,12 @@
          * [Microcontroller Boards](#featherM0-Microcontroller-Boards)
          * [Sensors](#sensors)
          * [Additional Parts](#additional-Parts)
-      * [Getting Started](#getting-started)
-      * [Google Spreadsheet](#google-spreadsheet)
-      * [Data Collection via HTTP](#experiment-reports)
-      * [Versions ](#versions-)
-        * [AQS - v2](#air-quality-sensor-v2)
-        * [AQS - v1](#air-quality-sensor-v1)
+      * [Getting Started with Arduino](#getting-started)
+      * [Downloading Code from Github](#using-github)
+      * [Connecting to WiFi + Google Spreadsheet](#http-request-to-google-spreadsheet)
+       * [Versions ](#versions-)
+       * [AQS - v2](#air-quality-sensor-v2)
+       * [AQS - v1](#air-quality-sensor-v1)
 
 ## Technologies 🖥 
 ### FeatherM0-Microcontroller-Boards
@@ -52,10 +52,11 @@
 For instructions on getting started with Arduino and setting up the necessary libraries and packages for the Air Quality Sensor, take a look at our guide:
 [Installing Arduino and Getting Started](https://docs.google.com/document/d/16o8Np3GaZfSjQlxNWIgi12ycb2CosCJ2blwEGiTplbA/edit?usp=sharing)
 
-## HTML POSTing to Google Spreadsheet www
-For instructions on getting the AQS connected with a Google Spreadsheet, take a lookm at our guide
-[HTML POSTing Data Google Spreadsheets](https://docs.google.com/document/d/1yNolfJr7s9rs_ewV7vN-bUsllEiPPxo2xeQbsmszQKE/edit?usp=sharing)
+## HTTP-Request-to-Google-Spreadsheet 🌐
+The Air Quality Sensor can post data in real-time to a spreadsheet online through HTTP methods!
 
+For instructions on getting the AQS connected with a Google Spreadsheet, take a look at our guide
+[HTTP POSTing to Google Spreadsheet](https://docs.google.com/document/d/1yNolfJr7s9rs_ewV7vN-bUsllEiPPxo2xeQbsmszQKE/edit?usp=sharing)
 
 
 ## Versions 🛠
