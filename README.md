@@ -20,7 +20,7 @@
         * [AQS - v2](#air-quality-sensor-v2)
         * [AQS - v1](#air-quality-sensor-v1)
 
-## Technologies💡
+## Technologies 🖥 
 ### FeatherM0-Microcontroller-Boards
 
 | Board | Board Image | Use | Link |
@@ -45,14 +45,14 @@
 |Micro SD| <img src="images/Micro-SD.jpeg" width="200" height = "200">|non volatile memory|[Digi-Key](https://www.digikey.com/en/products/detail/delkin-devices-inc/USDCOEM-16GB/13882332)
 |Jumper Wires| <img src="images/1954-02.jpg" width="200" height = "200">|connecting|[Adafruit](https://www.adafruit.com/product/1954)
 
-## Diagram          
+## Diagram 📝          
 <img src="images/Comm Sensor Lab V2.0 diagram.png"> 
 
-## Getting-Started
+## Getting-Started💡 
 For instructions on getting started with Arduino and setting up the necessary libraries and packages for the Air Quality Sensor, take a look at our guide:
 [Installing Arduino and Getting Started](https://docs.google.com/document/d/16o8Np3GaZfSjQlxNWIgi12ycb2CosCJ2blwEGiTplbA/edit?usp=sharing)
 
-## HTML POSTing to Google Spreadsheet
+## HTML POSTing to Google Spreadsheet www
 For instructions on getting the AQS connected with a Google Spreadsheet, take a lookm at our guide
 [HTML POSTing Data Google Spreadsheets](https://docs.google.com/document/d/1yNolfJr7s9rs_ewV7vN-bUsllEiPPxo2xeQbsmszQKE/edit?usp=sharing)
 
