@@ -34,9 +34,9 @@
 #define BUTTON_B  6  // oled button
 #define BUTTON_C  5  // oled button
 
-char ssid[] = SECRET_SSID;    // your network SSID (name)
+char ssid[] = SECRET_SSID;        // your network SSID (name)
 char pass[] = SECRET_PASS;    // your network password (use for WPA, or use as key for WEP)
-//String PostCommand = "POST /macros/s/"+ String(GSSD_ID) +"/exec?value=Hello HTTP/1.1";      // Google Sheets Script Deployment ID
+//char ssid2[] = SECRET_SSID2;        // your network SSID (name)
 
 int status = WL_IDLE_STATUS;
 char server[] = "script.google.com"; // name address for Google scripts as we are communicationg with the scripg (using DNS)
@@ -68,7 +68,7 @@ void setup(void) {
   initializeOLED();
   logfile = initializeSD(SD_CS);
   initializeBME();
-  initializeSCD30(55); // this sets CO2 sensor to 1 min intervals (max recommended)
+  initializeAirSensor();
 
   Wire.begin();  // connect to RTC
   if (!rtc.begin()) {
@@ -161,7 +161,7 @@ void loop(void)  {
       display.clearDisplay();
       display.display();
     }
-        int sleepMS = Watchdog.sleep();// remove comment after final push
-//    delay(16000); // uncomment to debug because serial communication doesn't come back after sleeping
+    //    int sleepMS = Watchdog.sleep();// remove comment after final push
+    delay(16000);
   }
 }
