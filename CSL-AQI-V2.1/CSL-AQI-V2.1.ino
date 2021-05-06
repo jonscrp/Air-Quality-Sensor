@@ -1,8 +1,8 @@
 /*
-   COMMUNITY SENSOR LAB AIR QUALITY SENSOR 
-   
+   COMMUNITY SENSOR LAB AIR QUALITY SENSOR
+
    featherM0-Wifi + featherwing adalogger-SD-RTC + SCD30-CO2 + BME280-TPRH + OLED display.
-   
+
    The SCD30 has a minimum power consumption of 5mA and cannot be stop-started. It's set to 55s (30s nominal)
    sampling period and the featherM0 sleeps for 2 x 16 =32s, wakes and waits for data available.
    Button A toggles display on/off but must be held down for 16s max and then wait 16s to toggle again.
@@ -11,7 +11,7 @@
 
    https://github.com/Community-Sensor-Lab/Air-Quality-Sensor
 
-   RICARDO TOLEDO-CROW NGENS, ESI, ASRC, CUNY, 
+   RICARDO TOLEDO-CROW NGENS, ESI, ASRC, CUNY,
    AMALIA TORRES, CUNY, SEPTEMBER 2020
 
 */
@@ -34,9 +34,9 @@
 #define BUTTON_B  6  // oled button
 #define BUTTON_C  5  // oled button
 
-char ssid[] = SECRET_SSID;        // your network SSID (name)
+char ssid[] = SECRET_SSID;    // your network SSID (name)
 char pass[] = SECRET_PASS;    // your network password (use for WPA, or use as key for WEP)
-//char ssid2[] = SECRET_SSID2;        // your network SSID (name)
+String PostCommand = "POST /macros/s/"+ String(GSSD_ID) + "/exec?value=Hello HTTP/1.1";      // Google Sheets Script Deployment ID
 
 int status = WL_IDLE_STATUS;
 char server[] = "script.google.com"; // name address for Google scripts as we are communicationg with the scripg (using DNS)
@@ -64,11 +64,13 @@ void setup(void) {
   Serial.begin(9600);
   delay(5000); Serial.println(__FILE__);
 
+  Serial.println(PostCommand);
+
   initializeWiFi();
   initializeOLED();
   logfile = initializeSD(SD_CS);
   initializeBME();
-  initializeAirSensor();
+  initializeSCD30(55); // this sets CO2 sensor to 1 min intervals (max recommended)
 
   Wire.begin();  // connect to RTC
   if (!rtc.begin()) {
@@ -135,9 +137,10 @@ void loop(void)  {
   logfile.flush();   // Write to disk. Uses 2048 bytes of I/O to SD card, power and takes time
 
   payloadUpload(outstr);
+  
   if (WiFi.status() != WL_CONNECTED) {
     Serial.println("No WiFi");
-  }
+  };
 
   for (int i = 1; i <= 2; i++)  {  // 32s =2x16s sleep
     displayState = toggleButton(BUTTON_A, displayState, buttonAstate, lastTimeToggle, timeDebounce);
@@ -154,14 +157,14 @@ void loop(void)  {
       }
       else  {
         display.println(" no w");
-      }
+      };
       display.display();
     }
     else  {  // turn display off
       display.clearDisplay();
       display.display();
-    }
-    //    int sleepMS = Watchdog.sleep();// remove comment after final push
-    delay(16000);
+    };
+    int sleepMS = Watchdog.sleep();// remove comment after final push
+    //    delay(16000); // uncomment to debug because serial communication doesn't come back after sleeping
   }
 }
