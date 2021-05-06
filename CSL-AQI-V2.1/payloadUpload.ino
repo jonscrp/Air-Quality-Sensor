@@ -3,42 +3,39 @@
 */
 void payloadUpload(String payload) {
   if (WiFi.status() == WL_CONNECTED) {
-    
+    if (!client.connected()) {
+      initializeClient();
+    }
 
+    payload = payload_base + "\"" + payload + "\"}";
+    Serial.print("payload: ");
+    Serial.println(payload);
 
-  if (!client.connected()) {
-    initializeClient();
+    // Make a HTTP request:
+    client.println(PostCommand);
+    client.println("Host: script.google.com");
+    client.println("Content-Type: application/x-www-form-urlencoded");
+    //client.println("Connection: close");
+    client.print("Content-Length: ");
+    client.println(payload.length());
+    client.println();
+    client.print(payload);
+    client.println();
+    delay(200);
+
+    Serial.println("Response: ");
+    while (client.available()) {
+      char c = client.read();
+      Serial.write(c);
+    }
+    Serial.println();
+
+    client.stop();
+    if (!client.connected()) {
+      Serial.println("disconnected from server.");
+    }
   }
-
-  payload = payload_base + "\"" + payload + "\"}";
-  Serial.print("payload: "); Serial.println(payload);
-
-  // Make a HTTP request:
-  client.println("POST /macros/s/EnterDeploymentID/exec?value=Hello HTTP/1.1"); 
-  client.println("Host: script.google.com");
-  client.println("Content-Type: application/x-www-form-urlencoded");
-  //client.println("Connection: close");
-  client.print("Content-Length: ");
-  client.println(payload.length());
-  client.println();
-  client.print(payload);
-  client.println();
-  delay(200);
-
-  Serial.println("Response: ");
-  while (client.available()) {
-    char c = client.read();
-    Serial.write(c);
-  }
-  Serial.println();
-
-  client.stop();
-  if (!client.connected()) {
-    Serial.println("disconnected from server.");
-  }
-  
-  }
-  else Serial.println("No WiFi Connection. Cannot complete payload");;
+  else Serial.println("No WiFi Connection. Cannot complete payload");
 }
 
 
