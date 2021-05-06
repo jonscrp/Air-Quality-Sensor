@@ -9,16 +9,16 @@
 **Table of Contents:**
 
    * [Community Sensor Lab - Air Quality Sensor]
-      * [Technologies](#technologies)
+      * [Technologies](#technologies-)
          * [Microcontroller Boards](#featherM0-Microcontroller-Boards)
          * [Sensors](#sensors)
          * [Additional Parts](#additional-Parts)
-      * [Getting Started with Arduino](#getting-started)
-      * [Downloading Code from Github](#using-github)
-      * [Connecting to WiFi + Google Spreadsheet](#http-request-to-google-spreadsheet)
+      * [Getting Started with Arduino](#getting-started-)
+      * [Downloading Code from Github](#using-github-)
+      * [Connecting to WiFi + Google Spreadsheet](#http-request-to-google-spreadsheet-)
        * [Versions ](#versions-)
-       * [AQS - v2](#air-quality-sensor-v2)
-       * [AQS - v1](#air-quality-sensor-v1)
+         * [AQS - v2](#air-quality-sensor-v2)
+         * [AQS - v1](#air-quality-sensor-v1)
 
 ## Technologies 🖥 
 ### FeatherM0-Microcontroller-Boards
@@ -51,6 +51,8 @@
 ## Getting-Started💡 
 For instructions on getting started with Arduino and setting up the necessary libraries and packages for the Air Quality Sensor, take a look at our guide:
 [Installing Arduino and Getting Started](https://docs.google.com/document/d/16o8Np3GaZfSjQlxNWIgi12ycb2CosCJ2blwEGiTplbA/edit?usp=sharing)
+
+## Using GitHub 🐈‍⬛🐙  
 
 ## HTTP-Request-to-Google-Spreadsheet 🌐
 The Air Quality Sensor can post data in real-time to a spreadsheet online through HTTP methods!
