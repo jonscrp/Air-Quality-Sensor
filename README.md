@@ -13,14 +13,16 @@
          * [Microcontroller Boards](#featherM0-Microcontroller-Boards)
          * [Sensors](#sensors)
          * [Additional Parts](#additional-Parts)
-      * [Getting Started with Arduino](#getting-started)
+      * [Getting Started with Arduino](#getting-started-)
       * [Downloading Code from Github](#using-github-)
       * [Connecting to WiFi + Google Spreadsheet](#http-request-to-google-spreadsheet-)
        * [Versions ](#versions-)
-         * [AQS - v2](#air-quality-sensor-v2)
+         * [AQS - v2](#air-quality-sensor-v2.1)
          * [AQS - v1](#air-quality-sensor-v1)
 
 ## Technologies 🖥 
+Here are the materials you will need with links of where to find them. 
+
 ### FeatherM0-Microcontroller-Boards
 
 | Board | Board Image | Use | Link |
@@ -45,24 +47,25 @@
 |Micro SD| <img src="images/Micro-SD.jpeg" width="200" height = "200">|non volatile memory|[Digi-Key](https://www.digikey.com/en/products/detail/delkin-devices-inc/USDCOEM-16GB/13882332)
 |Jumper Wires| <img src="images/1954-02.jpg" width="200" height = "200">|connecting|[Adafruit](https://www.adafruit.com/product/1954)
 
-## Diagram 📝          
+## Diagram 🔦          
 <img src="images/Comm Sensor Lab V2.0 diagram.png"> 
 
 ## Getting-Started💡 
 For instructions on getting started with Arduino and setting up the necessary libraries and packages for the Air Quality Sensor, take a look at our guide:
-[Installing Arduino and Getting Started](https://docs.google.com/document/d/16o8Np3GaZfSjQlxNWIgi12ycb2CosCJ2blwEGiTplbA/edit?usp=sharing)
+<a href="https://docs.google.com/document/d/16o8Np3GaZfSjQlxNWIgi12ycb2CosCJ2blwEGiTplbA/edit?usp=sharing" target="_blank">Installing Arduino and Getting Started</a>
 
 ## Using GitHub 🐈‍⬛🐙  
+If you are new to Github, check out our guide
+<a href="https://docs.google.com/document/d/16o8Np3GaZfSjQlxNWIgi12ycb2CosCJ2blwEGiTplbA/edit?usp=sharing" target="_blank">Downloading CSL AQS code from Github</a>
 
 ## HTTP-Request-to-Google-Spreadsheet 🌐
 The Air Quality Sensor can post data in real-time to a spreadsheet online through HTTP methods!
 
 For instructions on getting the AQS connected with a Google Spreadsheet, take a look at our guide
-[HTTP POSTing to Google Spreadsheet](https://docs.google.com/document/d/1yNolfJr7s9rs_ewV7vN-bUsllEiPPxo2xeQbsmszQKE/edit?usp=sharing)
-
+<a href="https://docs.google.com/document/d/1yNolfJr7s9rs_ewV7vN-bUsllEiPPxo2xeQbsmszQKE/edit?usp=sharing" target="_blank">HTTP Posting to Google Spreadsheet</a>
 
 ## Versions 🛠
-### Air-Quality-Sensor-v2
+### Air-Quality-Sensor-V2.1
 This is our latest version of our Air Quality Sensor. The code on this page is the latest code.
 ### Air-Quality-Sensor-v1
 Code from the first version of the Air Quality Sensor can be seen on the branch [Version-1](https://github.com/Community-Sensor-Lab/Air-Quality-Sensor/tree/Version-1)
