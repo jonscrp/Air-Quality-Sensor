@@ -53,6 +53,7 @@ Here are the materials you will need with links of where to find them.
 ## Getting Started💡 
 For instructions on getting started with Arduino and setting up the necessary libraries and packages for the Air Quality Sensor, take a look at our guide:
 <a href="https://docs.google.com/document/d/16o8Np3GaZfSjQlxNWIgi12ycb2CosCJ2blwEGiTplbA/edit?usp=sharing" target="_blank">Installing Arduino and Getting Started</a>
+[Other Link](https://docs.google.com/document/d/16o8Np3GaZfSjQlxNWIgi12ycb2CosCJ2blwEGiTplbA/edit?usp=sharing){:target="_blank"}
 
 ## Using-GitHub 🐈‍⬛🐙  
 If you are new to Github, check out our guide:
