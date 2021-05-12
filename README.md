@@ -13,7 +13,7 @@
          * [Microcontroller Boards](#featherM0-Microcontroller-Boards)
          * [Sensors](#sensors)
          * [Additional Parts](#additional-Parts)
-      * [Getting Started with Arduino](#getting-started-)
+      * [Getting Started with Arduino](#getting)
       * [Downloading Code from Github](#using-github-)
       * [Connecting to WiFi + Google Spreadsheet](#http-request-to-google-spreadsheet-)
        * [Versions ](#versions-)
@@ -54,7 +54,7 @@ Here are the materials you will need with links of where to find them.
 For instructions on getting started with Arduino and setting up the necessary libraries and packages for the Air Quality Sensor, take a look at our guide:
 <a href="https://docs.google.com/document/d/16o8Np3GaZfSjQlxNWIgi12ycb2CosCJ2blwEGiTplbA/edit?usp=sharing" target="_blank">Installing Arduino and Getting Started</a>
 
-## Using GitHub 🐈‍⬛🐙  
+## Using-GitHub 🐈‍⬛🐙  
 If you are new to Github, check out our guide:
 <a href="https://docs.google.com/document/d/16o8Np3GaZfSjQlxNWIgi12ycb2CosCJ2blwEGiTplbA/edit?usp=sharing" target="_blank">Downloading CSL AQS code from Github</a>
 
