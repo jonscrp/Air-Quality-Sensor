@@ -56,7 +56,7 @@ For instructions on getting started with Arduino and setting up the necessary li
 
 ## Using-GitHub 🐈‍⬛  
 If you are new to Github, check out our guide:
-[Downloading CSL AQS code from Github](https://docs.google.com/document/d/16o8Np3GaZfSjQlxNWIgi12ycb2CosCJ2blwEGiTplbA/edit?usp=sharing)
+[Downloading CSL AQS Code from Github](https://docs.google.com/document/d/1Vb9AufqkUwsVKtdozXMc4aboDjLqBNuyTXmZpECdKx0/edit?usp=sharing)
 
 ## HTTP-Request-to-Google-Spreadsheet 🌐
 The Air Quality Sensor can post data in (almost) real-time to a spreadsheet online through HTTP methods!
@@ -66,6 +66,7 @@ For instructions on getting the AQS connected with a Google Spreadsheet, take a 
 <br>In our guide we provide:
 * A template specifically for the Air Quality Sensor 
 * Step-by-step instructions to using the Google Script Editor for the AQS and deploying your app script
+* Managing troubleshooting issues
 * Step-by-step instructions to then connecting your App Script to the AQS through the Arduino IDE
 
 ## Versions 🛠
