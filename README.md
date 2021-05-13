@@ -52,19 +52,22 @@ Here are the materials you will need with links of where to find them.
 
 ## Getting Started💡 
 For instructions on getting started with Arduino and setting up the necessary libraries and packages for the Air Quality Sensor, take a look at our guide:
-<a href="https://docs.google.com/document/d/16o8Np3GaZfSjQlxNWIgi12ycb2CosCJ2blwEGiTplbA/edit?usp=sharing" target="_blank">Installing Arduino and Getting Started</a>
-[Other Link](https://docs.google.com/document/d/16o8Np3GaZfSjQlxNWIgi12ycb2CosCJ2blwEGiTplbA/edit?usp=sharing target="_blank)
+[Installing Arduino and Getting Started](https://docs.google.com/document/d/16o8Np3GaZfSjQlxNWIgi12ycb2CosCJ2blwEGiTplbA/edit?usp=sharing)
 
-## Using-GitHub 🐈‍⬛🐙  
+## Using-GitHub 🐈‍⬛  
 If you are new to Github, check out our guide:
-<a href="https://docs.google.com/document/d/16o8Np3GaZfSjQlxNWIgi12ycb2CosCJ2blwEGiTplbA/edit?usp=sharing" target="_blank">Downloading CSL AQS code from Github</a>
+[Downloading CSL AQS code from Github](https://docs.google.com/document/d/16o8Np3GaZfSjQlxNWIgi12ycb2CosCJ2blwEGiTplbA/edit?usp=sharing)
 
 ## HTTP-Request-to-Google-Spreadsheet 🌐
 The Air Quality Sensor can post data in (almost) real-time to a spreadsheet online through HTTP methods!
 
 For instructions on getting the AQS connected with a Google Spreadsheet, take a look at our guide:
-<a href="https://docs.google.com/document/d/1yNolfJr7s9rs_ewV7vN-bUsllEiPPxo2xeQbsmszQKE/edit?usp=sharing" target="_blank">HTTP Posting to Google Spreadsheet</a>
-In our guide we prove a template specifically for the Air Quality Sensor that you can use that comes the additional Google Script code
+[HTTP Posting to Google Spreadsheet](https://docs.google.com/document/d/1yNolfJr7s9rs_ewV7vN-bUsllEiPPxo2xeQbsmszQKE/edit?usp=sharing)
+In our guide we provide:
+* A template specifically for the Air Quality Sensor 
+* Step-by-step instructions to using the Google Script Editor for the AQS and deploying your app script
+* Step-by-step instructions to then connecting your App Script to the AQS through the Arduino IDE
+
 ## Versions 🛠
 ### Air-Quality-Sensor-V2.1
 This is our latest version of our Air Quality Sensor. The code on this page is the latest code.
