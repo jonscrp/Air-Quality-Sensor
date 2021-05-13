@@ -13,7 +13,7 @@
          * [Microcontroller Boards](#featherM0-Microcontroller-Boards)
          * [Sensors](#sensors)
          * [Additional Parts](#additional-Parts)
-      * [Getting Started with Arduino](#getting)
+      * [Getting Started with Arduino](#getting-started)
       * [Downloading Code from Github](#using-github-)
       * [Connecting to WiFi + Google Spreadsheet](#http-request-to-google-spreadsheet-)
        * [Versions ](#versions-)
@@ -54,15 +54,19 @@ Here are the materials you will need with links of where to find them.
 For instructions on getting started with Arduino and setting up the necessary libraries and packages for the Air Quality Sensor, take a look at our guide:
 [Installing Arduino and Getting Started](https://docs.google.com/document/d/16o8Np3GaZfSjQlxNWIgi12ycb2CosCJ2blwEGiTplbA/edit?usp=sharing)
 
-## Using-GitHub 🐈‍⬛  
-If you are new to Github, check out our guide:
-[Downloading CSL AQS Code from Github](https://docs.google.com/document/d/1Vb9AufqkUwsVKtdozXMc4aboDjLqBNuyTXmZpECdKx0/edit?usp=sharing)
+## Downloading Code 🐈‍⬛  
+If you are new to Github, **Welcome!** 
+Check out our guide:
+[Downloading CSL AQS Code from Github](https://docs.google.com/document/d/1Vb9AufqkUwsVKtdozXMc4aboDjLqBNuyTXmZpECdKx0/edit?usp=sharing)  where we explain how to download the necessary code for the Community Sensor Lab's Air Qaulity Sensor.
 
 ## HTTP-Request-to-Google-Spreadsheet 🌐
 The Air Quality Sensor can post data in (almost) real-time to a spreadsheet online through HTTP methods!
+For instructions on getting the AQS connected to a WiFi network take a look at our guide : [Connecting the AQS to WiFi](https://docs.google.com/document/d/1yNolfJr7s9rs_ewV7vN-bUsllEiPPxo2xeQbsmszQKE/edit?usp=sharing).
+<br>In our guide we explain:
+* How to connect the AQS to a WPA WiFi network 
+* How to connect the AQS to an open WiFi network
 
-For instructions on getting the AQS connected with a Google Spreadsheet, take a look at our guide:
-[HTTP Posting to Google Spreadsheet](https://docs.google.com/document/d/1yNolfJr7s9rs_ewV7vN-bUsllEiPPxo2xeQbsmszQKE/edit?usp=sharing).
+For instructions on getting the AQS connected with a Google Spreadsheet, take a look at our guide: [HTTP Posting to Google Spreadsheet](https://docs.google.com/document/d/1yNolfJr7s9rs_ewV7vN-bUsllEiPPxo2xeQbsmszQKE/edit?usp=sharing).
 <br>In our guide we provide:
 * A template specifically for the Air Quality Sensor 
 * Step-by-step instructions to using the Google Script Editor for the AQS and deploying your app script
