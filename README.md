@@ -62,8 +62,8 @@ If you are new to Github, check out our guide:
 The Air Quality Sensor can post data in (almost) real-time to a spreadsheet online through HTTP methods!
 
 For instructions on getting the AQS connected with a Google Spreadsheet, take a look at our guide:
-[HTTP Posting to Google Spreadsheet](https://docs.google.com/document/d/1yNolfJr7s9rs_ewV7vN-bUsllEiPPxo2xeQbsmszQKE/edit?usp=sharing)
-In our guide we provide:
+[HTTP Posting to Google Spreadsheet](https://docs.google.com/document/d/1yNolfJr7s9rs_ewV7vN-bUsllEiPPxo2xeQbsmszQKE/edit?usp=sharing).
+<br>In our guide we provide:
 * A template specifically for the Air Quality Sensor 
 * Step-by-step instructions to using the Google Script Editor for the AQS and deploying your app script
 * Step-by-step instructions to then connecting your App Script to the AQS through the Arduino IDE
