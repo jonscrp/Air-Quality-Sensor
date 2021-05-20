@@ -77,20 +77,4 @@ For instructions on getting the AQS connected with a Google Spreadsheet, take a 
 ### Air-Quality-Sensor-V2.1
 This is our latest version of our Air Quality Sensor. The code on this page is the latest code.
 ### Air-Quality-Sensor-v1
-Code from the first version of the Air Quality Sensor can be seen on the branch [Version-1](https://github.com/Community-Sensor-Lab/Air-Quality-Sensor/tree/Version-1)).
-<br>In our guide we explain:
-* How to connect the AQS to a WPA WiFi network 
-* How to connect the AQS to an open WiFi network
-
-For instructions on getting the AQS connected with a Google Spreadsheet, take a look at our guide: [HTTP Posting to Google Spreadsheet](https://docs.google.com/document/d/1yNolfJr7s9rs_ewV7vN-bUsllEiPPxo2xeQbsmszQKE/edit?usp=sharing).
-<br>In our guide we provide:
-* A template specifically for the Air Quality Sensor 
-* Step-by-step instructions to using the Google Script Editor for the AQS and deploying your app script
-* Managing troubleshooting issues
-* Step-by-step instructions to then connecting your App Script to the AQS through the Arduino IDE
-
-## Versions 🛠
-### Air-Quality-Sensor-V2.1
-This is our latest version of our Air Quality Sensor. The code on this page is the latest code.
-### Air-Quality-Sensor-v1
 Code from the first version of the Air Quality Sensor can be seen on the branch [Version-1](https://github.com/Community-Sensor-Lab/Air-Quality-Sensor/tree/Version-1)
