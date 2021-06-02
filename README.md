@@ -7,7 +7,7 @@
 <img src="images/air-qaulity-sensor-V2.jpeg" width="200" height = "300"> <img src="images/WIFI LOGGER CSL-AQS-V2.0.png" width="600" height = "300"> 
 <img src="images/IMG_2107.jpg" width="300" height = "200">
 
-<img src="IMG_2110.jpeg" width="300" height = "300">
+<img src="IMG_2110.jpg" width="300" height = "300">
 
 **Table of Contents:**
 
