@@ -22,7 +22,10 @@
 #include "RTClib.h"
 #include "SparkFun_SCD30_Arduino_Library.h"
 #include <Adafruit_GFX.h>
+
 #include <Adafruit_SH110X.h>
+
+
 #include <Adafruit_SSD1306.h>
 #include <Adafruit_Sensor.h>
 #include <Adafruit_BME280.h>
@@ -48,7 +51,9 @@ String payload_base =  "{\"command\":\"appendRow\",\"sheet_name\":\"Sheet1\",\"v
 String payload = "";
 
 RTC_PCF8523 rtc; // Real Time Clock for RevB Adafruit logger shield
+
 Adafruit_SH1107 display = Adafruit_SH1107(64, 128, &Wire);
+
 Adafruit_BME280 bme; // the bme tprh sensor
 File logfile;  // the logging file
 SCD30 airSensor; // sensirion scd30 ndir
@@ -147,8 +152,10 @@ void loop(void)  {
     displayState = toggleButton(BUTTON_A, displayState, buttonAstate, lastTimeToggle, timeDebounce);
     if (displayState)  { // turn display on with data
       display.clearDisplay();
+
       display.setTextSize(1);
       display.setTextColor(SH110X_WHITE);
+
       display.setCursor(0, 0);
       display.print("CO2 ppm "); display.print(CO2);
       display.print("  V "); display.println(measuredvbat);
@@ -167,7 +174,9 @@ void loop(void)  {
       display.clearDisplay();
       display.display();
     };
-    //int sleepMS = Watchdog.sleep();// remove comment after final push
-        delay(16000); // uncomment to debug because serial communication doesn't come back after sleeping
+
+    int sleepMS = Watchdog.sleep();// remove comment after final push
+    //    delay(16000); // uncomment to debug because serial communication doesn't come back after sleeping
+
   }
 }
