@@ -1,5 +1,5 @@
 // Adafruit OLED display 
-void initializeOLEDsample()  {  
+void initializeOLED()  {  
     Serial.begin(11500);
     
     Serial.println("OLED ok");
@@ -9,7 +9,7 @@ void initializeOLEDsample()  {
     display.setRotation(1);
     pinMode(BUTTON_A, INPUT_PULLUP);
     pinMode(BUTTON_B, INPUT_PULLUP);
-    pinMode(BUTTON_C, INPUT_PULLUP);git
+    pinMode(BUTTON_C, INPUT_PULLUP);
     display.setTextSize(1);
     display.setTextColor(SH110X_WHITE);
     display.setCursor(0, 0);
