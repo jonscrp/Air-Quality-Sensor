@@ -41,7 +41,7 @@ Here are the materials you will need with links of where to find them.
 |----------------|-------------------------------|----------|:--------------------------:|
 |Sensirion SD30 CO2 NDIR| <img src="images/Sensirion_SD30_CO2_NDIR.jpeg" width="200" height = "200" >|Measures CO2 in PPM|[Digi-Key](https://www.digikey.com/en/products/detail/sensirion-ag/SCD30/8445334?s=N4IgTCBcDaIMIHkwAIDKBRAcqhAlZAkmHMgLIIAiAQgKqrIAKA6qSALoC%2bQA)
 |BME280 Temp. Press. Rel Humidity| <img src="images/BME280.jpeg" width="200" height = "200"> | Measures temperature C, pressure hPa and relative humidity %|[Digi-Key](https://www.digikey.com/en/products/detail/adafruit-industries-llc/2652/5604372)
-|Sensirion SPS30 PM2.5| <img src="images/Sensirion-SPS30-PM25.jpg" width="200" height = "200" >|Measures particulate matter PM2.5+|[Digi-Key](https://www.digikey.com/en/products/detail/sensirion-ag/SPS30/9598990)
+|Sensirion SPS30 PM2.5| <img src="images/Sensirion-SPS30-PM2.5.jpg" width="200" height = "200" >|Measures particulate matter PM2.5+|[Digi-Key](https://www.digikey.com/en/products/detail/sensirion-ag/SPS30/9598990)
 
 ### Additional-Parts
 | Part | Part Image | Use | Purchase Link |
@@ -78,7 +78,9 @@ For instructions on getting the AQS connected with a Google Spreadsheet, take a 
 * Step-by-step instructions to then connecting your App Script to the AQS through the Arduino IDE
 
 ## Versions 🛠
+### Air-Quality-Sensor-V2.2
+This is our latest version of our Air Quality Sensor. The code on this page is the latest code. Version 2.2 of the AQS has the particulate matter code and has a different diplay board. The new screen is bigger now and uses different code in the file '''initializeOLED.ino'''
 ### Air-Quality-Sensor-V2.1
-This is our latest version of our Air Quality Sensor. The code on this page is the latest code.
+Code from version 2.1 of the Air Quality Sensor can be seen on the branch [Version-1](https://github.com/Community-Sensor-Lab/Air-Quality-Sensor/tree/Version-2.1)
 ### Air-Quality-Sensor-v1
 Code from the first version of the Air Quality Sensor can be seen on the branch [Version-1](https://github.com/Community-Sensor-Lab/Air-Quality-Sensor/tree/Version-1)
