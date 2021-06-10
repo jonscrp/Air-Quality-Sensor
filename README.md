@@ -10,7 +10,7 @@
 
 
 
-**Table of Contents:**
+## Table of Contents:
 
    * Community Sensor Lab 🌱 - Air Quality Sensor
       * [Technologies](#technologies-)
