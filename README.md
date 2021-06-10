@@ -12,7 +12,7 @@
 
 **Table of Contents:**
 
-   * [Community Sensor Lab - Air Quality Sensor]
+   * Community Sensor Lab 🌱 - Air Quality Sensor
       * [Technologies](#technologies-)
          * [Microcontroller Boards](#featherM0-Microcontroller-Boards)
          * [Sensors](#sensors)
@@ -65,11 +65,6 @@ Check out our guide:
 
 ## HTTP-Request-to-Google-Spreadsheet 🌐
 The Air Quality Sensor can post data in (almost) real-time to a spreadsheet online through HTTP methods!
-For instructions on getting the AQS connected to a WiFi network take a look at our guide : [Connecting the CSL AQS to WiFi](https://docs.google.com/document/d/1yNolfJr7s9rs_ewV7vN-bUsllEiPPxo2xeQbsmszQKE/edit?usp=sharing).
-<br>In our guide we explain:
-* How to connect the AQS to a WPA WiFi network 
-* How to connect the AQS to an open WiFi network
-
 For instructions on getting the AQS connected with a Google Spreadsheet, take a look at our guide: [HTTP Posting to Google Spreadsheet](https://docs.google.com/document/d/1yNolfJr7s9rs_ewV7vN-bUsllEiPPxo2xeQbsmszQKE/edit?usp=sharing).
 <br>In our guide we provide:
 * A template specifically for the Air Quality Sensor 
