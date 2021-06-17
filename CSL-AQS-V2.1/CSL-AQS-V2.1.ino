@@ -25,7 +25,6 @@
 
 #include <Adafruit_SH110X.h>
 
-
 #include <Adafruit_SSD1306.h>
 #include <Adafruit_Sensor.h>
 #include <Adafruit_BME280.h>
@@ -40,7 +39,7 @@
 
 char ssid[] = SECRET_SSID;    // your network SSID (name)
 char pass[] = SECRET_PASS;    // your network password (use for WPA, or use as key for WEP)
-String PostCommand = "POST /macros/s/"+ String(GSSD_ID) + "/exec?value=Hello HTTP/1.1";      // Google Sheets Script Deployment ID
+String PostCommand = String("POST /macros/s/") + String(GSSD_ID) + String("/exec?value=Hello HTTP/1.1");      // Google Sheets Script Deployment ID
 
 int status = WL_IDLE_STATUS;
 char server[] = "script.google.com"; // name address for Google scripts as we are communicationg with the scripg (using DNS)
