@@ -17,5 +17,6 @@ void initializeSCD30(int samplingInterval)  {
 //    airSensor.setForcedRecalibrationFactor(453);
     // Change measurement interval seconds 2-1800
     airSensor.setMeasurementInterval(samplingInterval);
+    delay(1000);
   }
 }

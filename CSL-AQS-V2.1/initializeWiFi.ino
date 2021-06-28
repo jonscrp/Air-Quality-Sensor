@@ -26,7 +26,7 @@ void initializeWiFi() {
         if (status == WL_CONNECTED) i = 5;
       }
     }
-    delay(10000);
+    delay(1000);
     Serial.println(WiFi.status());     // output some diagnostic info
 
   }
