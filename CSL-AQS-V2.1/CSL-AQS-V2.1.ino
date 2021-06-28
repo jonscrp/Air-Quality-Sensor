@@ -39,7 +39,7 @@
 
 char ssid[] = SECRET_SSID;    // your network SSID (name)
 char pass[] = SECRET_PASS;    // your network password (use for WPA, or use as key for WEP)
-String PostCommand = String("POST /macros/s/") + String(GSSD_ID) + String("/exec?value=Hello HTTP/1.1");      // Google Sheets Script Deployment ID
+String POSTCommand = String("POST /macros/s/") + String(GSSD_ID) + String("/exec?value=Hello HTTP/1.1");      // Google Sheets Script Deployment ID
 
 int status = WL_IDLE_STATUS;
 char server[] = "script.google.com"; // name address for Google scripts as we are communicationg with the scripg (using DNS)
@@ -69,7 +69,7 @@ void setup(void) {
   Serial.begin(9600);
   delay(5000); Serial.println(__FILE__);
 
-  Serial.println(PostCommand);
+  Serial.println(POSTCommand);
 
   initializeWiFi();
   initializeOLED();
@@ -142,31 +142,17 @@ void loop(void)  {
   logfile.flush();   // Write to disk. Uses 2048 bytes of I/O to SD card, power and takes time
 
   payloadUpload(outstr);
-  
-  if (WiFi.status() != WL_CONNECTED) {
-    Serial.println("No WiFi");
-  };
 
-  for (int i = 1; i <= 2; i++)  {  // 32s =2x16s sleep
+  for (int i = 1; i <= 8; i++)  {  // 124s =8x16s sleep
     displayState = toggleButton(BUTTON_A, displayState, buttonAstate, lastTimeToggle, timeDebounce);
     if (displayState)  { // turn display on with data
       display.clearDisplay();
-
-      display.setTextSize(1);
-      display.setTextColor(SH110X_WHITE);
-
       display.setCursor(0, 0);
       display.print("CO2 ppm "); display.print(CO2);
       display.print("  V "); display.println(measuredvbat);
       display.print("T C     "); display.println(Tbme);
       display.print("P mBar  "); display.println(Pbme);
       display.print("RH%     "); display.print(RHbme);
-      if (WiFi.status() == WL_CONNECTED) {
-        display.println("    w");
-      }
-      else  {
-        display.println(" no w");
-      };
       display.display();
     }
     else  {  // turn display off

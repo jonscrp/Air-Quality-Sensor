@@ -2,42 +2,51 @@
   Write to Google Sheets through a Wifi POST HTTP1.1 request to a Google script.
 */
 void payloadUpload(String payload) {
-  if (WiFi.status() == WL_CONNECTED) {
-    if (!client.connected()) {
-      initializeClient();
+  int status = 0;
+  
+  for (int i = 1; i < 5; i++) {
+    status = WiFi.begin(ssid, pass);
+    delay(500);
+
+    if (WiFi.status() == WL_CONNECTED) {
+      if (!client.connected()) {
+        initializeClient();
+      }
+      payload = payload_base + String("\"") + payload + String("\"}");
+      Serial.print("payload: ");  Serial.println(payload);
+      // Make a HTTP request:
+      client.println(POSTCommand);
+      client.println("Host: script.google.com");
+      client.println("Content-Type: application/x-www-form-urlencoded");
+      //client.println("Connection: close");
+      client.print("Content-Length: ");
+      client.println(payload.length());
+      client.println();
+      client.print(payload);
+      client.println();
+      delay(200);
+
+      Serial.println("Response: ");
+      while (client.available()) {
+        char c = client.read();
+        Serial.write(c);
+      }
+      Serial.println();
+
+      client.stop();
+      if (!client.connected()) {
+        Serial.println("disconnected from server.");
+      };
+      WiFi.end();
+      break;
     }
-
-    payload = payload_base + "\"" + payload + "\"}";
-    Serial.print("payload: ");
-    Serial.println(payload);
-
-    // Make a HTTP request:
-    client.println(PostCommand);
-    client.println("Host: script.google.com");
-    client.println("Content-Type: application/x-www-form-urlencoded");
-    //client.println("Connection: close");
-    client.print("Content-Length: ");
-    client.println(payload.length());
-    client.println();
-    client.print(payload);
-    client.println();
-    delay(200);
-
-    Serial.println("Response: ");
-    while (client.available()) {
-      char c = client.read();
-      Serial.write(c);
-    }
-    Serial.println();
-
-    client.stop();
-    if (!client.connected()) {
-      Serial.println("disconnected from server.");
+    else {
+      Serial.print("Trying to connect to Wifi : "); Serial.println(i);
     }
   }
-  else Serial.println("No WiFi Connection. Cannot complete payload");
+  if (status != WL_CONNECTED)
+    Serial.println("Continuing without WiFi"); Serial.println(status);
 }
-
 
 void initializeClient() {
   Serial.print("\nStarting connection to server... ");
