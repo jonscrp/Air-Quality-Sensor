@@ -85,12 +85,11 @@ void setup(void) {
   }
   else
     Serial.println("RTC ok");
-  Serial.println();
   // TO SET TIME at compile: run once to syncro then run again with line commented out
   //  rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
   delay(2000);
-  Serial.println("Date______\tTime____\tCO2ppm\tTempC\tRH%\tTempC\tP_mBar\tRH%\tVbatMV\tstatus");
-  logfile.println("Date______\tTime____\tCO2ppm\tTempC\tRH%\tTempC\tP_mBar\tRH%\tVbatMV\tstatus");
+//  Serial.println("Date______\tTime____\tCO2ppm\tTempC\tRH%\tTempC\tP_mBar\tRH%\tVbatMV\tstatus");
+//  logfile.println("Date______\tTime____\tCO2ppm\tTempC\tRH%\tTempC\tP_mBar\tRH%\tVbatMV\tstatus");
 }
 
 char outstr[100];
@@ -136,8 +135,8 @@ void loop(void)  {
   sprintf(outstr, "%02u/%02u/%02u %02u:%02u:%02u, %.2d, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %x",
           now.year(), now.month(), now.day(), now.hour(), now.minute(), now.second(),
           CO2, Tco2, RHco2, Tbme, Pbme, RHbme, measuredvbat, stat);
-  Serial.println("Date Time \tCO2 \tTco2 \tRHco2 \tTbme \tPbme \tRHbme \vbat(mV) \tstatus");
-  Serial.println(outstr);
+//  Serial.println("Date Time \tCO2 \tTco2 \tRHco2 \tTbme \tPbme \tRHbme \vbat(mV) \tstatus");
+//  Serial.println(outstr);
   logfile.println(outstr);
   logfile.flush();   // Write to disk. Uses 2048 bytes of I/O to SD card, power and takes time
 

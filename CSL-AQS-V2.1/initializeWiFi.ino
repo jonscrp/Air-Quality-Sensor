@@ -28,11 +28,9 @@ void initializeWiFi() {
     }
     delay(1000);
     Serial.println(WiFi.status());     // output some diagnostic info
-
-  }
-
+    }
   printWiFiStatus();
-
+  WiFi.end(); // end wifi. will be restarted each upload.
 }
 
 void printWiFiStatus() {
