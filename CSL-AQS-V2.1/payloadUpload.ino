@@ -12,8 +12,9 @@ void payloadUpload(String payload) {
       if (!client.connected()) {
         initializeClient();
       }
+      Serial.print("payload: ");  
       payload = payload_base + String("\"") + payload + String("\"}");
-      Serial.print("payload: ");  Serial.println(payload);
+      Serial.println(payload);
       // Make a HTTP request:
       client.println(POSTCommand);
       client.println("Host: script.google.com");
@@ -62,4 +63,5 @@ void initializeClient() {
     Serial.print("No connection to server: "); Serial.println(server);
     //while (1);
   }
+  Serial.println("end intializeClient");
 }

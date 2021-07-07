@@ -21,6 +21,6 @@ void initializeOLED()  {
     display.println("GSSID :");
     display.print(GSSD_ID);
     display.display(); // actually display all of the above
-    delay(5000);
+    //delay(5000);
   }
 }

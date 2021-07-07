@@ -22,14 +22,12 @@
 #include "RTClib.h"
 #include "SparkFun_SCD30_Arduino_Library.h"
 #include <Adafruit_GFX.h>
-
-#include <Adafruit_SH110X.h>
-
-#include <Adafruit_SSD1306.h>
+#include <Adafruit_SH110X.h>  // oled library
 #include <Adafruit_Sensor.h>
 #include <Adafruit_BME280.h>
-
 #include <WiFi101.h>
+#include "sps30.h" // this is Paul van Haastrecht library, not Sensirion's
+
 #include "arduino_secrets.h" // wifi name and password in .h file. see tab
 
 #define VBATPIN A7 // this is also D9 button A disable pullup to read analog
@@ -40,10 +38,8 @@
 char ssid[] = SECRET_SSID;    // your network SSID (name)
 char pass[] = SECRET_PASS;    // your network password (use for WPA, or use as key for WEP)
 String POSTCommand = String("POST /macros/s/") + String(GSSD_ID) + String("/exec?value=Hello HTTP/1.1");      // Google Sheets Script Deployment ID
-
 int status = WL_IDLE_STATUS;
 char server[] = "script.google.com"; // name address for Google scripts as we are communicationg with the scripg (using DNS)
-
 WiFiSSLClient client; // make SSL client
 // these are the commands to be sent to the google script: namely add a row to last in Sheet1 with the values TBD
 String payload_base =  "{\"command\":\"appendRow\",\"sheet_name\":\"Sheet1\",\"values\":";
@@ -56,6 +52,7 @@ Adafruit_SH1107 display = Adafruit_SH1107(64, 128, &Wire);
 Adafruit_BME280 bme; // the bme tprh sensor
 File logfile;  // the logging file
 SCD30 airSensor; // sensirion scd30 ndir
+SPS30 sps30; // SPS30 PM sensor
 
 const int SD_CS = 10; // Chip select for SD card default for Adalogger
 uint8_t stat = 0; // status byte
@@ -69,28 +66,15 @@ void setup(void) {
   Serial.begin(9600);
   delay(5000); Serial.println(__FILE__);
 
-  Serial.println(POSTCommand);
-
   initializeWiFi();
   initializeOLED();
   logfile = initializeSD(SD_CS);
   initializeBME();
   initializeSCD30(55); // this sets CO2 sensor to 1 min intervals (max recommended)
+  initializeSPS30(); // the PM sensor
 
-  Wire.begin();  // connect to RTC
-  if (!rtc.begin()) {
-    Serial.println("RTC failed");
-    stat = stat | 0x04; // 3rd bit set 'rtc not started'
-    //while (1);
-  }
-  else
-    Serial.println("RTC ok");
-  Serial.println();
-  // TO SET TIME at compile: run once to syncro then run again with line commented out
-  //  rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
-  delay(2000);
-  Serial.println("Date______\tTime____\tCO2ppm\tTempC\tRH%\tTempC\tP_mBar\tRH%\tVbatMV\tstatus");
-  logfile.println("Date______\tTime____\tCO2ppm\tTempC\tRH%\tTempC\tP_mBar\tRH%\tVbatMV\tstatus");
+//  Serial.println("Date______\tTime____\tCO2ppm\tTempC\tRH%\tTempC\tP_mBar\tRH%\tVbatMV\tstatus");
+//  logfile.println("Date______\tTime____\tCO2ppm\tTempC\tRH%\tTempC\tP_mBar\tRH%\tVbatMV\tstatus");
 }
 
 char outstr[100];
@@ -125,23 +109,31 @@ void loop(void)  {
   uint16_t CO2 = airSensor.getCO2();
   float Tco2 = airSensor.getTemperature();
   float RHco2 = airSensor.getHumidity();
-
+  
+  // read from the PM sensor
+  String pmString = read_sps30();
+  char pmChar[pmString.length()+1]; 
+  pmString.toCharArray(pmChar,pmString.length());
+  
   DateTime now;
   now = rtc.now(); // fetch the date + time
 
   pinMode(VBATPIN, INPUT); // read battery voltage
   float measuredvbat = analogRead(VBATPIN) * 0.006445;
   pinMode(BUTTON_A, INPUT_PULLUP);
-
-  sprintf(outstr, "%02u/%02u/%02u %02u:%02u:%02u, %.2d, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %x",
+//
+//  sprintf(outstr, "%02u/%02u/%02u %02u:%02u:%02u, %.2d, %.2f, %.2f, %.2f, %.2f, %.2f, %s, %.2f, %x, ",
+//          now.year(), now.month(), now.day(), now.hour(), now.minute(), now.second(),
+//          CO2, Tco2, RHco2, Tbme, Pbme, RHbme, pmChar, measuredvbat, stat);
+  sprintf(outstr, "%02u/%02u/%02u %02u:%02u:%02u, %.2d, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %x, ",
           now.year(), now.month(), now.day(), now.hour(), now.minute(), now.second(),
           CO2, Tco2, RHco2, Tbme, Pbme, RHbme, measuredvbat, stat);
-  Serial.println("Date Time \tCO2 \tTco2 \tRHco2 \tTbme \tPbme \tRHbme \vbat(mV) \tstatus");
+  Serial.println("Date Time \tCO2 \tTco2 \tRHco2 \tTbme \tPbme \tRHbme \tPM \tvbat(mV) \tstatus");
   Serial.println(outstr);
   logfile.println(outstr);
   logfile.flush();   // Write to disk. Uses 2048 bytes of I/O to SD card, power and takes time
 
-  payloadUpload(outstr);
+  payloadUpload(String(outstr) + pmString);
 
   for (int i = 1; i <= 8; i++)  {  // 124s =8x16s sleep
     displayState = toggleButton(BUTTON_A, displayState, buttonAstate, lastTimeToggle, timeDebounce);
@@ -160,8 +152,8 @@ void loop(void)  {
       display.display();
     };
 
-    int sleepMS = Watchdog.sleep();// remove comment after final push
-    //    delay(16000); // uncomment to debug because serial communication doesn't come back after sleeping
+//    int sleepMS = Watchdog.sleep();// remove comment after final push
+        delay(16000); // uncomment to debug because serial communication doesn't come back after sleeping
 
   }
 }

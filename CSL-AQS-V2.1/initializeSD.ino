@@ -1,7 +1,8 @@
+
+
 File initializeSD(uint8_t CS)  {
 
   File logFile;
-
   if (!SD.begin(CS)) {  // see if the card is present and can be initialized:
     Serial.println("Card failed, or not present.");
     stat = stat | 0x01; // set bit 1 if SD error
@@ -31,5 +32,17 @@ File initializeSD(uint8_t CS)  {
       Serial.println(filename);
     }
   }
+
+  Wire.begin();  // connect to RTC
+  if (!rtc.begin()) {
+    Serial.println("RTC failed");
+    stat = stat | 0x04; // 3rd bit set 'rtc not started'
+    //while (1);
+  }
+  else
+    Serial.println("RTC ok");
+  // TO SET TIME at compile: run once to syncro then run again with line commented out
+  //  rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+
   return logFile;
 }
