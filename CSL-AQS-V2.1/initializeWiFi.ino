@@ -26,6 +26,7 @@ void initializeWiFi() {
     }
     delay(1000);
   }
+  
   if (status != WL_CONNECTED)
     Serial.println("Continuing without WiFi");     // output some diagnostic info
   printWiFiStatus();
@@ -34,7 +35,7 @@ void initializeWiFi() {
   display.print("GSSID :");
   display.println(GSSD_ID);
   display.display(); // actually display all of the above
-
+  
   WiFi.end(); // end wifi. will be restarted each upload.
 }
 
