@@ -1,63 +1,78 @@
-/*  Sensirion SPS20 PM sensor. 
- *   
- *    functions:
- *    - void initializeSPS30()
- *    - String read_sps30 
- *    It returns a string with the 10 data fields mass for 1um, 2.5um, 4um, 10um; 
- *   concentration for 0.5um, 1um, 2.5um, 10um and average particle size in um
- */
+/*  Sensirion SPS20 PM sensor.
+
+      functions:
+      - void initializeSPS30()
+      - String read_sps30
+      It returns a string with the 10 data fields mass for 1um, 2.5um, 4um, 10um;
+     concentration for 0.5um, 1um, 2.5um, 10um and average particle size in um
+*/
 
 String read_sps30()
-{ static bool header = true;
-  uint8_t ret, error_cnt = 0;
+{ static bool pmheader = true;
+  uint8_t ret, error_cnt, i = 0;
+  String outString;
   struct sps_values val;
-  // loop to get data
-  do {
+
+  // loop to get data up to 3 times
+  for (i = 1; i < 4; i++) {
     ret = sps30.GetValues(&val);
-    // data might not have been ready
-    if (ret == ERR_DATALENGTH) {
-      if (error_cnt++ > 3)
-        Serial.println("Error during reading values: ");
-      delay(1000);
-    }
+    if (ret == ERR_DATALENGTH ) 
+      Serial.println("SPS30 err reading values");
     else if (ret != ERR_OK)
-      Serial.println("Error during reading values: ");
-  } while (ret != ERR_OK);
+      Serial.println("SPS30 err reading values");
+    else
+      break;
+  }
 
   // only print header first time
-  if (header) {
+  if (pmheader) {
     Serial.println("PM data from Sensirion SPS30 is in the following order...");
     Serial.println("-------------Mass -----------    ------------- Number --------------   -Average-");
     Serial.println("     Concentration [μg/m3]             Concentration [#/cm3]             [μm]");
     Serial.println("mP1.0,\tmP2.5,\tmP4.0,\tmP10,\tnP0.5,\tnP1.0,\tnP2.5,\tnP4.0,\tnP10,\tPartSize");
-    header = false;
+    pmheader = false;
   }
-//  String outString = String(val.MassPM1) + String(",\t") + String(val.MassPM2) + String(",\t") + String(val.MassPM4) + String(",\t") + String(val.MassPM10) + String(",\t") +
-//                     String(val.NumPM0) + String(",\t") + String(val.NumPM1) + String(",\t") + String(val.NumPM2) + String(",\t") + String(val.NumPM4) + String(",\t") +
-//                     String(val.NumPM10) + String(",\t") + String(val.PartSize);
-  String outString = String(val.MassPM1) + String(", ") + String(val.MassPM2) + String(", ") + String(val.MassPM4) + String(", ") + String(val.MassPM10) + String(", ") +
-                     String(val.NumPM0) + String(", ") + String(val.NumPM1) + String(", ") + String(val.NumPM2) + String(", ") + String(val.NumPM4) + String(", ") +
-                     String(val.NumPM10) + String(", ") + String(val.PartSize);
+
+  if (i < 4) // we got valid data
+    outString = String(val.MassPM1) + String(", ") + String(val.MassPM2) + String(", ") + String(val.MassPM4) + String(", ") + String(val.MassPM10) + String(", ") +
+                String(val.NumPM0) + String(", ") + String(val.NumPM1) + String(", ") + String(val.NumPM2) + String(", ") + String(val.NumPM4) + String(", ") +
+                String(val.NumPM10) + String(", ") + String(val.PartSize);
+  else // not valid data
+    outString = String("");
+
   return (outString);
 }
 
 void initializeSPS30() {
-  pinMode(11, OUTPUT); digitalWrite(11, HIGH); // this is to turn on the miniBoost 3.7V->5V converter for SPS30
-  Serial1.begin(115200); // to communicate with SPS30 on RX,\tX
-  // Initialize SPS30 library
-  if (! sps30.begin(&Serial1))
-    Serial.println("Could not set serial communication channel");
-  // check for SPS30 connection
-  if (!sps30.probe()) {
-    Serial.println("could not probe / connect with SPS30");}
-  //  else
-  //    Serial.println("Detected SPS30");
-  // reset SPS30 connection
-  if (!sps30.reset())
-    Serial.println("could not reset SPS30 ");
-  // start measurement
-  if (sps30.start())
-    Serial.println("Started SPS30");
+  Serial.print("starting SPS30... ");
+  pinMode(11, OUTPUT);
+
+  int i = 0;
+  for (i = 1; i < 4; i++) {
+    digitalWrite(11, LOW); // turn off the power to the Adafruit Miniboost 3.7V->5V converter for SPS30
+    delay(10000); // wait for voltage to drop so that SPS30 is off
+    digitalWrite(11, HIGH); // turn on. If this power cycle isn't done the UART Serial1 won't connect
+    Serial1.begin(115200);
+    if (!Serial1)
+      Serial.println("Serial1 NOT ok");
+    delay(1000);
+    if (!sps30.begin(&Serial1))
+      Serial.println("Serial1 communication channel NOT ok");
+    else if (!sps30.probe())    // check for SPS30 connection
+      Serial.println("probe / connect with SPS30 NOT ok");
+    else if (!sps30.reset())
+      Serial.println("reset SPS30 NOT ok");
+    else if (!sps30.start())     // start measurement
+      Serial.println("SPS30 start NOT ok");
+    else {
+      Serial.println("SPS30 ok");
+      break;
+    }
+    Serial.print("Trying 3 times: ");
+    Serial.println(i);
+  }
+  if (i == 3)
+    stat |= 0x20; // error so set bit 5
   else
-    Serial.println("Could NOT start SPS30");
+    stat &= 0xDF; // no error clear bit 5
 }

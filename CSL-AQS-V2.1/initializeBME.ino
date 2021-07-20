@@ -1,6 +1,7 @@
 // Adafruit BME280 T P RH sensor
 
 void initializeBME()  {
+  Serial.print("starting BME280... ");
   unsigned status = bme.begin();
   // You can also pass in a Wire library object like &Wire2
   // status = bme.begin(0x76, &Wire2)

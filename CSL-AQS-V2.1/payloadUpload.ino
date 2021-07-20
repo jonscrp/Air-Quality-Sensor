@@ -3,7 +3,7 @@
 */
 void payloadUpload(String payload) {
   int status = 0;
-  
+
   for (int i = 1; i < 5; i++) {
     status = WiFi.begin(ssid, pass);
     delay(500);
@@ -12,7 +12,7 @@ void payloadUpload(String payload) {
       if (!client.connected()) {
         initializeClient();
       }
-      Serial.print("payload: ");  
+      Serial.print("payload: ");
       payload = payload_base + String("\"") + payload + String("\"}");
       Serial.println(payload);
       // Make a HTTP request:
@@ -36,7 +36,7 @@ void payloadUpload(String payload) {
 
       client.stop();
       if (!client.connected()) {
-        Serial.println("disconnected from server.");
+        Serial.println("disconnected from server");
       };
       WiFi.end();
       break;
@@ -46,7 +46,8 @@ void payloadUpload(String payload) {
     }
   }
   if (status != WL_CONNECTED)
-    Serial.println("Continuing without WiFi"); Serial.println(status);
+    Serial.println("Continuing without WiFi");
+  //Serial.println(status);
 }
 
 void initializeClient() {

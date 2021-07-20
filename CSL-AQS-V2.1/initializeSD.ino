@@ -1,5 +1,4 @@
 
-
 File initializeSD(uint8_t CS)  {
 
   File logFile;
@@ -9,7 +8,7 @@ File initializeSD(uint8_t CS)  {
     //while (1);
   }
   else  {
-    Serial.println("card initialized.");
+    Serial.print("startint SD card... ");
     char filename[] = "LOG0000.TXT";  // create a new file//increase 0000
     for (uint16_t i = 0; i <= 9999; i++) {
       filename[3] = i / 1000 + '0';    //48 ascii character value of 0 //integer division by
@@ -28,11 +27,14 @@ File initializeSD(uint8_t CS)  {
       //while (1);
     }
     else  {
-      Serial.print("Logging to file: ");
+      Serial.print("logging to file: ");
       Serial.println(filename);
+      logFile.println(header);
+      logFile.flush();
     }
   }
 
+  Serial.print("starting RTC... ");
   Wire.begin();  // connect to RTC
   if (!rtc.begin()) {
     Serial.println("RTC failed");
@@ -42,7 +44,6 @@ File initializeSD(uint8_t CS)  {
   else
     Serial.println("RTC ok");
   // TO SET TIME at compile: run once to syncro then run again with line commented out
-  //  rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
-
+//    rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
   return logFile;
 }
