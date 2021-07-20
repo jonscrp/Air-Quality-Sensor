@@ -11,25 +11,31 @@ void initializeWiFi() {
     //while (true);
     delay(500);
   }
-
-  int i = 0;
-  while (i < 3) {
-    if (i == 5) break;
-    i++;
+  status = WiFi.status();
+  for (int i = 1; i < 5; i++) {
     if (status != WL_CONNECTED) {
-
-      if (i < 3) {
-        Serial.print("Attempting to connect to SSID: ");
-        Serial.println(ssid);
-        status = WiFi.begin(ssid, pass);   // Connect to WPA/WPA2 network. Change this line if using open or WEP network:
-        // status = WiFi.begin(ssid2);   // uncomment this line if using open or WEP network:
-        if (status == WL_CONNECTED) i = 5;
-      }
+      Serial.print("Attempting to connect to SSID: ");
+      Serial.println(ssid);
+      status = WiFi.begin(ssid, pass);   // Connect to WPA/WPA2 network. Change this line if using open or WEP network:
+      // status = WiFi.begin(ssid);   // uncomment this line if using open or WEP network:
+    }
+    else {
+      Serial.print("Connected to WiFi -");
+      Serial.println(i);
+      break;
     }
     delay(1000);
-    Serial.println(WiFi.status());     // output some diagnostic info
-    }
+  }
+  
+  if (status != WL_CONNECTED)
+    Serial.println("Continuing without WiFi");     // output some diagnostic info
   printWiFiStatus();
+  display.print("SSID :");
+  display.println(ssid);
+  display.print("GSSID :");
+  display.println(GSSD_ID);
+  display.display(); // actually display all of the above
+  
   WiFi.end(); // end wifi. will be restarted each upload.
 }
 

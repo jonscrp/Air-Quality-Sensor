@@ -11,8 +11,9 @@ void payloadUpload(String payload) {
       if (!client.connected()) {
         initializeClient();
       }
+      Serial.print("payload: ");
       payload = payload_base + String("\"") + payload + String("\"}");
-      Serial.print("payload: ");  Serial.println(payload);
+      Serial.println(payload);
       // Make a HTTP request:
       client.println(POSTCommand);
       client.println("Host: script.google.com");
@@ -34,7 +35,7 @@ void payloadUpload(String payload) {
 
       client.stop();
       if (!client.connected()) {
-        Serial.println("disconnected from server.");
+        Serial.println("disconnected from server");
       };
       WiFi.end();
       break;
@@ -43,10 +44,9 @@ void payloadUpload(String payload) {
       Serial.print("Trying to connect to Wifi : "); Serial.println(i);
     }
   }
-  if (status != WL_CONNECTED) {
-    Serial.println("Continuing without WiFi. Status ");
-    Serial.println(status);
-  }
+  if (status != WL_CONNECTED)
+    Serial.println("Continuing without WiFi");
+  //Serial.println(status);
 }
 
 void initializeClient() {
@@ -62,4 +62,5 @@ void initializeClient() {
     Serial.print("Not connected to ");
     Serial.println(server);
   }
+  Serial.println("end intializeClient");
 }

@@ -1,7 +1,7 @@
 /*
-   COMMUNITY SENSOR LAB AIR QUALITY SENSOR
+   COMMUNITY SENSOR LAB - AIR QUALITY SENSOR
 
-   featherM0-Wifi + featherwing adalogger-SD-RTC + SCD30-CO2 + BME280-TPRH + OLED display.
+   featherM0-Wifi + featherwing adalogger-SD-RTC + SCD30-CO2 + BME280-TPRH + OLED display + SPS30-PM2.5
 
    The SCD30 has a minimum power consumption of 5mA and cannot be stop-started. It's set to 55s (30s nominal)
    sampling period and the featherM0 sleeps for 2 x 16 =32s, wakes and waits for data available.
@@ -11,8 +11,17 @@
 
    https://github.com/Community-Sensor-Lab/Air-Quality-Sensor
 
+   Global status is in uint8_t stat in bit order:
+   0- SD card not present
+   1- SD could not create file
+   2- RTC failed
+   3- 
+
+   4- SCD30 CO2 sensor timeout
+   5- SPS30 PM2.5 sensor malfunction
+   
    RICARDO TOLEDO-CROW NGENS, ESI, ASRC, CUNY,
-   AMALIA TORRES, CUNY, SEPTEMBER 2020
+   AMALIA TORRES, CUNY, July 2021
 
 */
 #include <SPI.h>
@@ -22,14 +31,12 @@
 #include "RTClib.h"
 #include "SparkFun_SCD30_Arduino_Library.h"
 #include <Adafruit_GFX.h>
-
-#include <Adafruit_SH110X.h>
-
-#include <Adafruit_SSD1306.h>
+#include <Adafruit_SH110X.h>  // oled library
 #include <Adafruit_Sensor.h>
 #include <Adafruit_BME280.h>
-
 #include <WiFi101.h>
+#include "sps30.h" // this is Paul van Haastrecht library, not Sensirion's
+
 #include "arduino_secrets.h" // wifi name and password in .h file. see tab
 
 #define VBATPIN A7 // this is also D9 button A disable pullup to read analog
@@ -40,24 +47,21 @@
 char ssid[] = SECRET_SSID;    // your network SSID (name)
 char pass[] = SECRET_PASS;    // your network password (use for WPA, or use as key for WEP)
 String POSTCommand = String("POST /macros/s/") + String(GSSD_ID) + String("/exec?value=Hello HTTP/1.1");      // Google Sheets Script Deployment ID
-
 int status = WL_IDLE_STATUS;
 char server[] = "script.google.com"; // name address for Google scripts as we are communicationg with the scripg (using DNS)
-
 WiFiSSLClient client; // make SSL client
 // these are the commands to be sent to the google script: namely add a row to last in Sheet1 with the values TBD
 String payload_base =  "{\"command\":\"appendRow\",\"sheet_name\":\"Sheet1\",\"values\":";
 String payload = "";
-
+char header[] = "DateTime, CO2, Tco2, RHco2, Tbme, Pbme, RHbme, vbat(mV), status, mP1.0, mP2.5, mP4.0, mP10, ncP0.5, ncP1.0, ncP2.5, ncP4.0, ncP10, avgPartSize";
 RTC_PCF8523 rtc; // Real Time Clock for RevB Adafruit logger shield
-
 Adafruit_SH1107 display = Adafruit_SH1107(64, 128, &Wire);
-
 Adafruit_BME280 bme; // the bme tprh sensor
 File logfile;  // the logging file
 SCD30 airSensor; // sensirion scd30 ndir
-
+SPS30 sps30; // SPS30 PM sensor
 const int SD_CS = 10; // Chip select for SD card default for Adalogger
+
 uint8_t stat = 0; // status byte
 
 void setup(void) {
@@ -69,27 +73,12 @@ void setup(void) {
   Serial.begin(9600);
   delay(5000); Serial.println(__FILE__);
 
-  Serial.println(POSTCommand);
-
-  initializeWiFi();
   initializeOLED();
-  logfile = initializeSD(SD_CS);
-  initializeBME();
+  initializeSPS30(); // the PM sensor
   initializeSCD30(55); // this sets CO2 sensor to 1 min intervals (max recommended)
-
-  Wire.begin();  // connect to RTC
-  if (!rtc.begin()) {
-    Serial.println("RTC failed");
-    stat = stat | 0x04; // 3rd bit set 'rtc not started'
-    //while (1);
-  }
-  else
-    Serial.println("RTC ok");
-  // TO SET TIME at compile: run once to syncro then run again with line commented out
-  //  rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
-  delay(2000);
-//  Serial.println("Date______\tTime____\tCO2ppm\tTempC\tRH%\tTempC\tP_mBar\tRH%\tVbatMV\tstatus");
-//  logfile.println("Date______\tTime____\tCO2ppm\tTempC\tRH%\tTempC\tP_mBar\tRH%\tVbatMV\tstatus");
+  initializeBME();
+  logfile = initializeSD(SD_CS);
+  initializeWiFi();
 }
 
 char outstr[100];
@@ -111,8 +100,8 @@ void loop(void)  {
   airSensor.setAmbientPressure(Pbme); // update CO2 sensor to current pressure
   // wait for data avail on CO2 sensor
   while (!airSensor.dataAvailable()) {
-    delay(1000);
-    if (ctr > 31) {  // timeout is 31s
+    delay(3000);
+    if (ctr > 61) {  // timeout is 61s
       stat = stat | 0x10; // set bit 4 timeout
       break;
     }
@@ -132,17 +121,32 @@ void loop(void)  {
   float measuredvbat = analogRead(VBATPIN) * 0.006445;
   pinMode(BUTTON_A, INPUT_PULLUP);
 
-  sprintf(outstr, "%02u/%02u/%02u %02u:%02u:%02u, %.2d, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %x",
+  // read from the PM sensor
+  delay(10000); // wait for the sps30 to stabilize
+  String pmString = read_sps30();
+
+  //  sprintf(outstr, "%02u/%02u/%02u %02u:%02u:%02u, %.2d, %.2f, %.2f, %.2f, %.2f, %.2f, %s, %.2f, %x, ",
+  //          now.year(), now.month(), now.day(), now.hour(), now.minute(), now.second(),
+  //          CO2, Tco2, RHco2, Tbme, Pbme, RHbme, pmChar, measuredvbat, stat);
+  sprintf(outstr, "%02u/%02u/%02u %02u:%02u:%02u, %.2d, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %x, ",
           now.year(), now.month(), now.day(), now.hour(), now.minute(), now.second(),
           CO2, Tco2, RHco2, Tbme, Pbme, RHbme, measuredvbat, stat);
-//  Serial.println("Date Time \tCO2 \tTco2 \tRHco2 \tTbme \tPbme \tRHbme \vbat(mV) \tstatus");
-//  Serial.println(outstr);
+
+  payloadUpload(String(outstr) + pmString);
+
+  Serial.println(header);
+  Serial.print(outstr);
+  logfile.print(outstr);
+  pmString.toCharArray(outstr, pmString.length() + 1);
+  Serial.println(outstr);
+
   logfile.println(outstr);
   logfile.flush();   // Write to disk. Uses 2048 bytes of I/O to SD card, power and takes time
 
-  payloadUpload(outstr);
-
-  for (int i = 1; i <= 8; i++)  {  // 124s =8x16s sleep
+  // turn off SPS30
+  int ret = sps30.sleep();
+  // sleep cycle
+  for (int i = 1; i <= 4; i++)  {  // 124s =8x16s sleep
     displayState = toggleButton(BUTTON_A, displayState, buttonAstate, lastTimeToggle, timeDebounce);
     if (displayState)  { // turn display on with data
       display.clearDisplay();
@@ -158,9 +162,9 @@ void loop(void)  {
       display.clearDisplay();
       display.display();
     };
-
-    int sleepMS = Watchdog.sleep();// remove comment after final push
-    //    delay(16000); // uncomment to debug because serial communication doesn't come back after sleeping
-
+//    int sleepMS = Watchdog.sleep();// remove comment for 
+    delay(16000); // uncomment to debug because serial communication doesn't come back after sleeping
   }
+  // turn on SPS30
+  ret = sps30.wakeup();
 }

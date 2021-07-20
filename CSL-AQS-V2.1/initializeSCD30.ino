@@ -1,6 +1,7 @@
 // Sensirion SCD30 CO2 sensor
 
 void initializeSCD30(int samplingInterval)  {
+  Serial.print("starting SCD30... ");
   if (airSensor.begin() == false) {
     Serial.println("SCD30 CO2 sensor not detected");
     stat = stat | 0x08;
