@@ -162,8 +162,8 @@ void loop(void)  {
       display.clearDisplay();
       display.display();
     };
-//    int sleepMS = Watchdog.sleep();// remove comment for 
-    delay(16000); // uncomment to debug because serial communication doesn't come back after sleeping
+    int sleepMS = Watchdog.sleep();// remove comment for 
+    // delay(16000); // uncomment to debug because serial communication doesn't come back after sleeping
   }
   // turn on SPS30
   ret = sps30.wakeup();
