@@ -33,12 +33,16 @@ String read_sps30()
     pmheader = false;
   }
 
-  if (i < 4) // we got valid data
+ if (i < 4)  { // we got valid data
     outString = String(val.MassPM1) + String(", ") + String(val.MassPM2) + String(", ") + String(val.MassPM4) + String(", ") + String(val.MassPM10) + String(", ") +
                 String(val.NumPM0) + String(", ") + String(val.NumPM1) + String(", ") + String(val.NumPM2) + String(", ") + String(val.NumPM4) + String(", ") +
                 String(val.NumPM10) + String(", ") + String(val.PartSize);
-  else // not valid data
+    pm25 = val.NumPM2;
+  }
+  else {// not valid data
     outString = String("");
+    pm25 = 0;
+  }
   return (outString);
 }
 
