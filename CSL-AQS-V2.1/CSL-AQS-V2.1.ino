@@ -75,7 +75,7 @@ void setup(void) {
 
   initializeOLED();
   initializeSPS30(); // the PM sensor
-  initializeSCD30(55); // this sets CO2 sensor to 1 min intervals (max recommended)
+  initializeSCD30(25); // this sets CO2 sensor to 30s more stable (1 min max recommended)
   initializeBME();
   logfile = initializeSD(SD_CS);
   initializeWiFi();
