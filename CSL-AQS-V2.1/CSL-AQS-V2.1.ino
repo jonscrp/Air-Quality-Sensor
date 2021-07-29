@@ -35,7 +35,7 @@
 #include <Adafruit_Sensor.h>
 #include <Adafruit_BME280.h>
 #include <WiFi101.h>
-#include "sps30.h" // this is Paul van Haastrecht library, not Sensirion's
+#include "sps30.h" // this is Paul van Haastrecht library, not Sensirion's https://github.com/huilab/HoneywellTruStabilitySPI.git
 
 #include "arduino_secrets.h" // wifi name and password in .h file. see tab
 
