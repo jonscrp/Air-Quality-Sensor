@@ -16,8 +16,10 @@ void initializeWiFi() {
     if (status != WL_CONNECTED) {
       Serial.print("Attempting to connect to SSID: ");
       Serial.println(ssid);
-      status = WiFi.begin(ssid, pass);   // Connect to WPA/WPA2 network. Change this line if using open or WEP network:
-      // status = WiFi.begin(ssid);   // uncomment this line if using open or WEP network:
+      if (pass != "") // if no password
+        status = WiFi.begin(ssid, pass);  
+      else
+        status = WiFi.begin(ssid);   
     }
     else {
       Serial.print("Connected to WiFi -");

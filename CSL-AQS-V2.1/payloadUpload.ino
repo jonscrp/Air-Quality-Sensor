@@ -5,8 +5,12 @@ void payloadUpload(String payload) {
   int status = 0;
 
   for (int i = 1; i < 5; i++) {
-    status = WiFi.begin(ssid, pass);
-    delay(1000);
+    if (pass != "") // if password is not empty
+      status = WiFi.begin(ssid, pass);
+    else
+      status = WiFi.begin(ssid);
+    delay(500);
+
     if (WiFi.status() == WL_CONNECTED) {
       if (!client.connected()) {
         initializeClient();

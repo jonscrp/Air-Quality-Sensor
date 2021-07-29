@@ -39,7 +39,6 @@ String read_sps30()
                 String(val.NumPM10) + String(", ") + String(val.PartSize);
   else // not valid data
     outString = String("");
-
   return (outString);
 }
 

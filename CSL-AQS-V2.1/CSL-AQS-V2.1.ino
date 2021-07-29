@@ -124,7 +124,7 @@ void loop(void)  {
   // read from the PM sensor
   delay(10000); // wait for the sps30 to stabilize
   String pmString = read_sps30();
-
+  
   //  sprintf(outstr, "%02u/%02u/%02u %02u:%02u:%02u, %.2d, %.2f, %.2f, %.2f, %.2f, %.2f, %s, %.2f, %x, ",
   //          now.year(), now.month(), now.day(), now.hour(), now.minute(), now.second(),
   //          CO2, Tco2, RHco2, Tbme, Pbme, RHbme, pmChar, measuredvbat, stat);
@@ -146,7 +146,7 @@ void loop(void)  {
   // turn off SPS30
   int ret = sps30.sleep();
   // sleep cycle
-  for (int i = 1; i <= 4; i++)  {  // 124s =8x16s sleep
+  for (int i = 1; i <= 8; i++)  {  // 124s =8x16s sleep
     displayState = toggleButton(BUTTON_A, displayState, buttonAstate, lastTimeToggle, timeDebounce);
     if (displayState)  { // turn display on with data
       display.clearDisplay();
@@ -163,7 +163,7 @@ void loop(void)  {
       display.display();
     };
     int sleepMS = Watchdog.sleep();// remove comment for 
-    // delay(16000); // uncomment to debug because serial communication doesn't come back after sleeping
+//    delay(16000); // uncomment to debug because serial communication doesn't come back after sleeping
   }
   // turn on SPS30
   ret = sps30.wakeup();
