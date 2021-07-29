@@ -64,6 +64,8 @@ const int SD_CS = 10; // Chip select for SD card default for Adalogger
 
 uint8_t stat = 0; // status byte
 
+float pm25 = 0; //pm2.5 value
+
 void setup(void) {
 
   pinMode(VBATPIN, INPUT);
@@ -155,7 +157,8 @@ void loop(void)  {
       display.print("  V "); display.println(measuredvbat);
       display.print("T C     "); display.println(Tbme);
       display.print("P mBar  "); display.println(Pbme);
-      display.print("RH%     "); display.print(RHbme);
+      display.print("RH%     "); display.println(RHbme);
+      display.print("PM2.5   "); display.print(pm25);
       display.display();
     }
     else  {  // turn display off
