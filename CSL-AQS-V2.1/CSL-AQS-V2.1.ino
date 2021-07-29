@@ -139,6 +139,7 @@ void loop(void)  {
   logfile.print(outstr);
   pmString.toCharArray(outstr, pmString.length() + 1);
   Serial.println(outstr);
+
   logfile.println(outstr);
   logfile.flush();   // Write to disk. Uses 2048 bytes of I/O to SD card, power and takes time
 
