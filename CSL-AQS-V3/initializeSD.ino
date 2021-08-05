@@ -1,11 +1,12 @@
+/*
 
-File initializeSD(uint8_t CS)  {
+*/
 
+File initializeSD()  {
   File logFile;
-  if (!SD.begin(CS)) {  // see if the card is present and can be initialized:
+  if (!SD.begin(SD_CS)) {  // see if the card is present and can be initialized:
     Serial.println("Card failed, or not present.");
     stat = stat | 0x01; // set bit 1 if SD error
-    //while (1);
   }
   else  {
     Serial.print("startint SD card... ");
@@ -15,7 +16,6 @@ File initializeSD(uint8_t CS)  {
       filename[4] = i / 100 - 10 * (i / 1000) + '0';
       filename[5] = i / 10 - 10 * (i / 100) + '0'; //integer division 100
       filename[6] = i % 10 + '0';   //modulo 10
-      //Serial.println(filename);
       if (!SD.exists(filename)) {  // only open a new file if it doesn't exist
         logFile = SD.open(filename, FILE_WRITE);
         break;  // leave the loop
@@ -24,7 +24,6 @@ File initializeSD(uint8_t CS)  {
     if (!logFile) {
       Serial.println("Couldn't create file");
       stat = stat | 0x02;
-      //while (1);
     }
     else  {
       Serial.print("logging to file: ");
@@ -39,11 +38,11 @@ File initializeSD(uint8_t CS)  {
   if (!rtc.begin()) {
     Serial.println("RTC failed");
     stat = stat | 0x04; // 3rd bit set 'rtc not started'
-    //while (1);
   }
   else
     Serial.println("RTC ok");
   // TO SET TIME at compile: run once to syncro then run again with line commented out
-//    rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+  //rtc.adjust(DateTime(F(__DATE__), F(__TIME__)));
+
   return logFile;
 }

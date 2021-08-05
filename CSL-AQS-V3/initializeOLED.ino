@@ -1,15 +1,13 @@
 // Adafruit OLED display
 void initializeOLED()  {
   Serial.print("starting 128x64 OLED... ");
-  if (!display.begin(0x3C, true)) { // Address 0x3C for 128x32
+  if (!display.begin(0x3C, true)) // Address 0x3C for 128x32
     Serial.println(F("SH110X  allocation failed"));
-    // while(1);
-  }
   else  {
     Serial.println("OLED ok");
     display.display();
     display.setRotation(1);
-//    Serial.println("Button test");
+    //    Serial.println("Button test");
     pinMode(BUTTON_A, INPUT_PULLUP);
     pinMode(BUTTON_B, INPUT_PULLUP);
     pinMode(BUTTON_C, INPUT_PULLUP);
@@ -18,9 +16,21 @@ void initializeOLED()  {
     display.setTextSize(1);
     display.setTextColor(SH110X_WHITE);
     display.setCursor(0, 0);
-//    display.println("GSSID :");
-//    display.print(GSSD_ID);
-//    display.display(); // actually display all of the above
-    //delay(5000);
   }
+}
+
+bool toggleButton(uint8_t button, bool state, bool& buttonState, int& prevTime, int debounce )  {
+  if (digitalRead(button))  {
+    buttonState = true;
+//    Serial.print("buttonState "); Serial.println(buttonState);
+    return state;
+  }
+  else if (buttonState && millis() - prevTime > debounce) {
+    buttonState = false;
+    prevTime = millis();
+//    Serial.print("buttonState "); Serial.println(buttonState);
+    return !state;
+  }
+  else
+    return state;
 }

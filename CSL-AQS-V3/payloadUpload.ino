@@ -2,13 +2,11 @@
   Write to Google Sheets through a Wifi POST HTTP1.1 request to a Google script.
 */
 void payloadUpload(String payload) {
-  int status = 0;
-
-  for (int i = 1; i < 5; i++) {
-    if (pass != "") // if password is not empty
-      status = WiFi.begin(ssid, pass);
+  for (int i = 1; i < 4; i++) { // allways try to connect to wifi
+    if (password != "") // if password is not empty
+      wStatus = WiFi.begin(ssid, password);
     else
-      status = WiFi.begin(ssid);
+      wStatus = WiFi.begin(ssid);
     delay(500);
 
     if (WiFi.status() == WL_CONNECTED) {
@@ -48,9 +46,8 @@ void payloadUpload(String payload) {
       Serial.print("Trying to connect to Wifi : "); Serial.println(i);
     }
   }
-  if (status != WL_CONNECTED)
+  if (wStatus != WL_CONNECTED)
     Serial.println("Continuing without WiFi");
-  //Serial.println(status);
 }
 
 void initializeClient() {
