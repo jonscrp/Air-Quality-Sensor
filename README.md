@@ -52,7 +52,7 @@ Here are the materials you will need with links of where to find them.
 |Jumper Wires| <img src="images/1954-02.jpg" width="200" height = "200">|connecting|[Adafruit](https://www.adafruit.com/product/1954)
 
 ## Diagram 🔦          
-<img src="images/Comm Sensor Lab V2.0 diagram.png"> 
+<img src="images/CSL V3.0 diagram.pdf"> 
 
 ## Getting Started💡 
 For instructions on getting started with Arduino and setting up the necessary libraries and packages for the Air Quality Sensor, take a look at our guide:
