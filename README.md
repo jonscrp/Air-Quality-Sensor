@@ -1,4 +1,5 @@
-# Air Quality Sensor 🌱 
+# Air Quality Sensor V3🌱 
+V3 has code for the SPS30 PM2.5 and HSC differential pressure (Met Museum) sensors. If these are not pesent the code keeps going and reports 'no sensor' to SD log and google sheet. Additionally, keeps the start-stop for Wifi and sleeps all for ~25mA operation.
 
  Welcome to our ASRC Community Sensor Lab! We're still building this space but feel free to use the materials available. Contact [kkrueger@gc.cuny.edu](mailto:kkrueger@gc.cuny.edu) if you have any questions. We'll try to answer as soon as possible!
  
@@ -73,7 +74,7 @@ For instructions on getting the AQS connected with a Google Spreadsheet, take a 
 * Step-by-step instructions to then connecting your App Script to the AQS through the Arduino IDE
 
 ## Versions 🛠
-### Air-Quality-Sensor-V2.2
+### Air-Quality-Sensor-V3
 This is our latest version of our Air Quality Sensor. The code on this page is the latest code. Version 2.2 of the AQS has the particulate matter code and has a different diplay board. The new screen is bigger now and uses different code in the file " initializeOLED.ino "
 ### Air-Quality-Sensor-V2.1
 Code from version 2.1 of the Air Quality Sensor can be seen on the branch [Version-2.1](https://github.com/Community-Sensor-Lab/Air-Quality-Sensor/tree/Version-2.1)
