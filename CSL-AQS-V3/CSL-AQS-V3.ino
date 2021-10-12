@@ -1,3 +1,4 @@
+
 /*
    COMMUNITY SENSOR LAB - AIR QUALITY SENSOR
 
@@ -135,7 +136,7 @@ void loop(void)  {
 
   int ret = sps30.sleep(); // turn off SPS30
   // sleep cycle
-  for (int i = 1; i <= 8; i++)  {  // 124s = 8x16s sleep, only toggle display 
+  for (int i = 1; i <= 8; i++)  {  // 124s = 8x16s sleep, only toggle display
     displayState = toggleButton(BUTTON_A, displayState, buttonAstate, lastTimeToggle, timeDebounce);
     if (displayState)  { // turn display on with data
       display.clearDisplay();
