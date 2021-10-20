@@ -80,4 +80,4 @@ This is our latest version of our Air Quality Sensor. The code on this page is t
 Code from version 2.1 of the Air Quality Sensor can be seen on the branch [Version-2.1](https://github.com/Community-Sensor-Lab/Air-Quality-Sensor/tree/Version-2.1)
 ### Air-Quality-Sensor-v1
 Code from the first version of the Air Quality Sensor can be seen on the branch [Version-1](https://github.com/Community-Sensor-Lab/Air-Quality-Sensor/tree/Version-1)
->>>>>>> 0638ff72a75dee49da651496fa4cb009fbc28ff5
+
