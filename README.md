@@ -43,10 +43,12 @@ Here are the materials you will need with links of where to find them.
 |Sensirion SD30 CO2 NDIR| <img src="images/Sensirion_SD30_CO2_NDIR.jpeg" width="200" height = "200" >|Measures CO2 in PPM|[Digi-Key](https://www.digikey.com/en/products/detail/sensirion-ag/SCD30/8445334?s=N4IgTCBcDaIMIHkwAIDKBRAcqhAlZAkmHMgLIIAiAQgKqrIAKA6qSALoC%2bQA)
 |BME280 Temp. Press. Rel Humidity| <img src="images/BME280.jpeg" width="200" height = "200"> | Measures temperature C, pressure hPa and relative humidity %|[Digi-Key](https://www.digikey.com/en/products/detail/adafruit-industries-llc/2652/5604372)
 |Sensirion SPS380 PM2.5| <img src="images/Sensirion-SPS380-PM25.jpg" width="200" height = "200" >|Measures particulate matter PM2.5+|[Digi-Key](https://www.digikey.com/en/products/detail/sensirion-ag/SPS30/9598990)
+|Differential Pressure| <img src="images/Sensirion-SPS380-PM25.jpg" width="200" height = "200" >|Measures particulate matter PM2.5+|[Digi-Key](https://www.digikey.com/en/products/detail/sensirion-ag/SPS30/9598990)
 
 ### Additional-Parts
 | Part | Part Image | Use | Purchase Link |
 |----------------|-------------------------------|----------|:--------------------------:|
+|MiniBoost 5V| <img src="images/Battery-Lithium-Polymer-LiPo-3.7V.jpeg" width="200" height = "200"> |Boosts battery pawer to 5V|[Digi-Key](https://www.adafruit.com/product/4654)
 |Battery Lithium Polymer LiPo 3.7V| <img src="images/Battery-Lithium-Polymer-LiPo-3.7V.jpeg" width="200" height = "200"> |Device's battery|[Digi-Key](https://www.digikey.com/en/products/detail/adafruit-industries-llc/354/5054541)
 |Battery Coin cr1220| <img src="images/Battery-Coin-cr1220.jpeg" width="200" height = "200"> |Clock Battery|[Digi_Key](https://www.digikey.com/en/products/detail/renata-batteries/RENATA-CR1220-TS-1/13283109)
 |Micro SD| <img src="images/Micro-SD.jpeg" width="200" height = "200">|non volatile memory|[Digi-Key](https://www.digikey.com/en/products/detail/delkin-devices-inc/USDCOEM-16GB/13882332)
@@ -75,7 +77,7 @@ For instructions on getting the AQS connected with a Google Spreadsheet, take a 
 
 ## Versions 🛠
 ### Air-Quality-Sensor-V3
-This is our latest version of our Air Quality Sensor. The code on this page is the latest code. Version 2.2 of the AQS has the particulate matter code and has a different diplay board. The new screen is bigger now and uses different code in the file " initializeOLED.ino "
+This is our latest version of our Air Quality Sensor. The code on this page is the latest code. Bigger display screen, power booster, PM 2.5 and differential pressure sensors are included in this version.
 ### Air-Quality-Sensor-V2.1
 Code from version 2.1 of the Air Quality Sensor can be seen on the branch [Version-2.1](https://github.com/Community-Sensor-Lab/Air-Quality-Sensor/tree/Version-2.1)
 ### Air-Quality-Sensor-v1
