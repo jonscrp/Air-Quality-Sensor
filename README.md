@@ -75,6 +75,10 @@ For instructions on getting the AQS connected with a Google Spreadsheet, take a 
 * Managing troubleshooting issues
 * Step-by-step instructions to then connecting your App Script to the AQS through the Arduino IDE
 
+## Solar Integration 🌞 ☀️ 
+The Air Quality Sensor can be powered by the sun!
+For instructions on getting the AQS connected to a solar panel visit our document guide: [Solar Integration for the AQS](https://docs.google.com/document/d/1Q-aV4gpCV_NFu_VYhCmv1KPlE8r25asAGBMgROmjtNk/edit?usp=sharing).
+
 ## Versions 🛠
 ### Air-Quality-Sensor-V3
 This is our latest version of our Air Quality Sensor. The code on this page is the latest code. Bigger display screen, power booster, PM 2.5 and differential pressure sensors are included in this version.
