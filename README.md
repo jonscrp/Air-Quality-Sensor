@@ -18,9 +18,10 @@ V3 has code for the SPS30 PM2.5 and HSC differential pressure (Met Museum) senso
          * [Microcontroller Boards](#featherM0-Microcontroller-Boards)
          * [Sensors](#sensors)
          * [Additional Parts](#additional-Parts)
-      * [Getting Started with Arduino](#getting-started)
+      * [Getting Started with Arduino](#getting-started-)
       * [Downloading Code from Github](#using-github-)
       * [Connecting to WiFi + Google Spreadsheet](#http-request-to-google-spreadsheet-)
+      * [Solar Integration for the AQS](#solar-integration-)
        * [Versions ](#versions-)
          * [AQS - v2](#air-quality-sensor-v2.1)
          * [AQS - v1](#air-quality-sensor-v1)
@@ -75,7 +76,7 @@ For instructions on getting the AQS connected with a Google Spreadsheet, take a 
 * Managing troubleshooting issues
 * Step-by-step instructions to then connecting your App Script to the AQS through the Arduino IDE
 
-## Solar Integration 🌞 ☀️ 
+## Solar Integration ☀️ 
 The Air Quality Sensor can be powered by the sun!
 For instructions on getting the AQS connected to a solar panel visit our document guide: [Solar Integration for the AQS](https://docs.google.com/document/d/1Q-aV4gpCV_NFu_VYhCmv1KPlE8r25asAGBMgROmjtNk/edit?usp=sharing).
 
