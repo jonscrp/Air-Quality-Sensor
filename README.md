@@ -19,7 +19,7 @@ V3 has code for the SPS30 PM2.5 and HSC differential pressure (Met Museum) senso
       * [Starting From Scratch](#Starting-From-Scratch)
       * [Assembly](#Assembly)
       * [Arduino IDE](#Arduino-IDE)
-      * [Setting Up Google Spreadsheet](#google-spreadsheet)
+      * [Setting Up Google Spreadsheet](#Setting-Up-Goggle-Spreadsheet)
 
 ## Starting-From-Scratch💡 
 * [How to Solder Air Quality Sensor](https://docs.google.com/document/d/1l6jeO-1NOw7vDZXchC9iGBB8vkmnokzwbz_wixmtFyU/edit?usp=sharing)
@@ -53,10 +53,10 @@ Here are the materials you will need with links of where to find them.
 |Micro SD| <img src="images/Micro-SD.jpeg" width="200" height = "200">|non volatile memory|[Digi-Key](https://www.digikey.com/en/products/detail/delkin-devices-inc/USDCOEM-16GB/13882332)
 |Jumper Wires| <img src="images/1954-02.jpg" width="200" height = "200">|connecting|[Adafruit](https://www.adafruit.com/product/1954)
 
-## Diagram 🔦          
+### Diagram 🔦          
 <img src="images/CSL V3.0 diagram 1.png">
 
-##### Solar Integration ☀️ 
+### Solar Integration ☀️ 
 The Air Quality Sensor can be powered by the sun!
 For instructions on getting the AQS connected to a solar panel visit our document guide: [Solar Integration for the AQS](https://docs.google.com/document/d/1Q-aV4gpCV_NFu_VYhCmv1KPlE8r25asAGBMgROmjtNk/edit?usp=sharing).
 
@@ -74,7 +74,8 @@ If you are new to Github, **Welcome!**
 Check out our guide:
 [Downloading CSL AQS Code from Github](https://docs.google.com/document/d/1Vb9AufqkUwsVKtdozXMc4aboDjLqBNuyTXmZpECdKx0/edit?usp=sharing)  where we explain how to download the necessary code for the Community Sensor Lab's Air Quality Sensor.
 
-## HTTP-Request-to-Google-Spreadsheet 🌐
+## Setting-Up-Google-Spreadsheet
+### HTTP-Request-to-Google-Spreadsheet 🌐
 The Air Quality Sensor can post data in (almost) real-time to a spreadsheet online through HTTP methods!
 For instructions on getting the AQS connected with a Google Spreadsheet, take a look at our guide: [HTTP Posting to Google Spreadsheet](https://docs.google.com/document/d/1yNolfJr7s9rs_ewV7vN-bUsllEiPPxo2xeQbsmszQKE/edit?usp=sharing).
 <br>In our guide we provide:
