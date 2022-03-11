@@ -92,7 +92,7 @@ For instructions on getting the AQS connected with a Google Spreadsheet, take a 
 ### Air-Quality-Sensor-V3
 This is our latest version of our Air Quality Sensor. The code on this page is the latest code. Bigger display screen, power booster, PM 2.5 and differential pressure sensors are included in this version.
 ### Air-Quality-Sensor-V2.1
-Code from version 2.1 of the Air Quality Sensor can be seen on the branch [Version-2.1](https://github.com/Community-Sensor-Lab/Air-Quality-Sensor/tree/Version-2.1)
+Code from version 2.1 of the Air Quality Sensor can be seen on the branch [Version-2.1](https://github.com/Community-Sensor-Lab/Air-Quality-Sensor/tree/CSL-AQS-V2.1)
 ### Air-Quality-Sensor-v1
 Code from the first version of the Air Quality Sensor can be seen on the branch [Version-1](https://github.com/Community-Sensor-Lab/Air-Quality-Sensor/tree/Version-1)
 
