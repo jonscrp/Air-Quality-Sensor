@@ -59,7 +59,7 @@ For instructions on getting the AQS connected with a Google Spreadsheet, take a 
 * Step-by-step instructions to then connecting your App Script to the AQS through the Arduino IDE
 
 
-### Parts-List 🖥 
+## Parts-List 🖥 
 Here are the materials you will need with links of where to find them. 
 
 ### FeatherM0-Microcontroller-Boards
