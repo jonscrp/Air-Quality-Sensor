@@ -16,23 +16,19 @@ V3 has code for the SPS30 PM2.5 and HSC differential pressure (Met Museum) senso
 ## Contents:
 
    * Community Sensor Lab 🌱 - Air Quality Sensor
-      * [Starting From Scratch](#getting started-)
+      * [Starting From Scratch](#getting-started-)
       * [Assembly] (#assembly-)
       * [Arduino IDE] (#arduino-)
       * [Setting Up Google Spreadsheet] (#google spreadsheet-)
 
 ## Getting Started💡 
-For instructions on getting started with How to Solder Air Quality Sensor , take a look at our guide:
-[How to Solder Air Quality Sensor](https://docs.google.com/document/d/1l6jeO-1NOw7vDZXchC9iGBB8vkmnokzwbz_wixmtFyU/edit?usp=sharing)
+* [How to Solder Air Quality Sensor](https://docs.google.com/document/d/1l6jeO-1NOw7vDZXchC9iGBB8vkmnokzwbz_wixmtFyU/edit?usp=sharing)
 
-For instructions on getting started with Air Quality Sensor Boards Assembly, take a look at our guide:
-[Air Quality Sensor Boards Assembly](https://docs.google.com/document/d/1AezJ0XiPEsc3vEHGtJqxCqGEe5GDv0d0T-DoVZDCgCY/edit?usp=sharing)
+* [Air Quality Sensor Boards Assembly](https://docs.google.com/document/d/1AezJ0XiPEsc3vEHGtJqxCqGEe5GDv0d0T-DoVZDCgCY/edit?usp=sharing)
 
-For instructions on getting started with  How to Attach Sensors to Boards, take a look at our guide:
-[How to Attach Sensors to Boards](https://docs.google.com/document/d/1BrGlBl2Zau5XgyUAorEzxkr_Fa7h0j_XQgn0lQ-tBvw/edit?usp=sharing)
+* [How to Attach Sensors to Boards](https://docs.google.com/document/d/1BrGlBl2Zau5XgyUAorEzxkr_Fa7h0j_XQgn0lQ-tBvw/edit?usp=sharing)
 
-For instructions on getting started with Arduino and setting up the necessary libraries and packages for the Air Quality Sensor, take a look at our guide:
-[Installing Arduino and Getting Started](https://docs.google.com/document/d/16o8Np3GaZfSjQlxNWIgi12ycb2CosCJ2blwEGiTplbA/edit?usp=sharing)
+* [Installing Arduino and Getting Started](https://docs.google.com/document/d/16o8Np3GaZfSjQlxNWIgi12ycb2CosCJ2blwEGiTplbA/edit?usp=sharing)
 
 
 ## Downloading Code 🐈‍⬛  
@@ -49,7 +45,7 @@ For instructions on getting the AQS connected with a Google Spreadsheet, take a 
 * Managing troubleshooting issues
 * Step-by-step instructions to then connecting your App Script to the AQS through the Arduino IDE
 
-## Parts_List 🖥 
+## Parts-List 🖥 
 Here are the materials you will need with links of where to find them. 
 
 ### FeatherM0-Microcontroller-Boards
