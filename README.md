@@ -16,11 +16,10 @@ V3 has code for the SPS30 PM2.5 and HSC differential pressure (Met Museum) senso
 ## Contents:
 
    * Community Sensor Lab 🌱 - Air Quality Sensor
-      * [Getting Started with Arduino](#getting-started-)
-      * [Downloading Code from Github](#using-github-)
-      * [Connecting to WiFi + Google Spreadsheet](#http-request-to-google-spreadsheet-)
-      * [Technologies](#technologies-)
-      * [Solar Integration for the AQS](#solar-integration-)
+      * [Starting From Scratch](#getting started-)
+      * [Assembly] (#assembly-)
+      * [Arduino IDE] (#arduino-)
+      * [Setting Up Google Spreadsheet] (#google spreadsheet-)
 
 ## Getting Started💡 
 For instructions on getting started with How to Solder Air Quality Sensor , take a look at our guide:
@@ -50,7 +49,7 @@ For instructions on getting the AQS connected with a Google Spreadsheet, take a 
 * Managing troubleshooting issues
 * Step-by-step instructions to then connecting your App Script to the AQS through the Arduino IDE
 
-## Technologies 🖥 
+## Parts_List 🖥 
 Here are the materials you will need with links of where to find them. 
 
 ### FeatherM0-Microcontroller-Boards
