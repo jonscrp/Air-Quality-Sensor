@@ -56,7 +56,7 @@ Here are the materials you will need with links of where to find them.
 <img src="images/CSL V3.0 diagram 1.png">
 
 ### Soldering
-[Guide On Soldering Air Quality Sensor](https://docs.google.com/document/d/1l6jeO-1NOw7vDZXchC9iGBB8vkmnokzwbz_wixmtFyU/edit?usp=sharing)
+[Guide On How To Solder Air Quality Sensor](https://docs.google.com/document/d/1l6jeO-1NOw7vDZXchC9iGBB8vkmnokzwbz_wixmtFyU/edit?usp=sharing)
 
 ### Solar Integration ☀️ 
 The Air Quality Sensor can be powered by the sun!
