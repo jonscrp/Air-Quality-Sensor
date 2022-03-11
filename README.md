@@ -23,6 +23,9 @@ V3 has code for the SPS30 PM2.5 and HSC differential pressure (Met Museum) senso
 
 ## Starting-From-Scratch💡 
 
+### Soldering
+[Guide On How To Solder Air Quality Sensor](https://docs.google.com/document/d/1l6jeO-1NOw7vDZXchC9iGBB8vkmnokzwbz_wixmtFyU/edit?usp=sharing)
+
 ### Parts-List 🖥 
 Here are the materials you will need with links of where to find them. 
 
@@ -38,7 +41,7 @@ Here are the materials you will need with links of where to find them.
 ### Sensors
 | Sensor | Sensor Image | Use | Purchase Link |
 |----------------|-------------------------------|----------|:--------------------------:|
-|Sensirion SD30 CO2 NDIR| <img src="images/Sensirion_SD30_CO2_NDIR.jpeg" width="100" height = "100">|Measures CO2 in PPM|[Digi-Key](https://www.digikey.com/en/products/detail/sensirion-ag/SCD30/8445334?s=N4IgTCBcDaIMIHkwAIDKBRAcqhAlZAkmHMgLIIAiAQgKqrIAKA6qSALoC%2bQA)
+|Sensirion SD30 CO2 NDIR| <img src="images/Sensirion_SD30_CO2_NDIR.jpeg" width="200" height = "200">|Measures CO2 in PPM|[Digi-Key](https://www.digikey.com/en/products/detail/sensirion-ag/SCD30/8445334?s=N4IgTCBcDaIMIHkwAIDKBRAcqhAlZAkmHMgLIIAiAQgKqrIAKA6qSALoC%2bQA)
 |BME280 Temp. Press. Rel Humidity| <img src="images/BME280.jpeg" width="200" height = "200"> | Measures temperature C, pressure hPa and relative humidity %|[Digi-Key](https://www.digikey.com/en/products/detail/adafruit-industries-llc/2652/5604372)
 |Sensirion SPS380 PM2.5| <img src="images/Sensirion-SPS380-PM25.jpg" width="200" height = "200" >|Measures particulate matter PM2.5+|[Digi-Key](https://www.digikey.com/en/products/detail/sensirion-ag/SPS30/9598990)
 |Differential Pressure| <img src="images/hsc-differential-pressure.jpeg" width="200" height = "200" >|Measures particulate matter PM2.5+|[No Link Available at this time](https://www.digikey.com/en/products/detail/sensirion-ag/SPS30/9598990)
@@ -54,9 +57,6 @@ Here are the materials you will need with links of where to find them.
 
 ### Diagram 🔦          
 <img src="images/CSL V3.0 diagram 1.png">
-
-### Soldering
-[Guide On How To Solder Air Quality Sensor](https://docs.google.com/document/d/1l6jeO-1NOw7vDZXchC9iGBB8vkmnokzwbz_wixmtFyU/edit?usp=sharing)
 
 ### Solar Integration ☀️ 
 The Air Quality Sensor can be powered by the sun!
