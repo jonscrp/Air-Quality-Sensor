@@ -13,7 +13,7 @@ V3 has code for the SPS30 PM2.5 and HSC differential pressure (Met Museum) senso
 
 <br>
 
-## Table of Contents:
+## Contents:
 
    * Community Sensor Lab 🌱 - Air Quality Sensor
       * [Technologies](#technologies-)
