@@ -23,7 +23,7 @@ V3 has code for the SPS30 PM2.5 and HSC differential pressure (Met Museum) senso
 
 
 ## Starting-From-Scratch💡 
- * [Parts List](#Parts-List)
+  #### [List of Parts](#Parts-List)
 
 ### Soldering
 [Guide On How To Solder Air Quality Sensor](https://docs.google.com/document/d/1l6jeO-1NOw7vDZXchC9iGBB8vkmnokzwbz_wixmtFyU/edit?usp=sharing)
