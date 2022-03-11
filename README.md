@@ -17,35 +17,14 @@ V3 has code for the SPS30 PM2.5 and HSC differential pressure (Met Museum) senso
 
    * Community Sensor Lab 🌱 - Air Quality Sensor
       * [Starting From Scratch](#Getting-Started)
-      * [Assembly] (#assembly-)
-      * [Arduino IDE] (#arduino-)
-      * [Setting Up Google Spreadsheet] (#google spreadsheet-)
+      * [Assembly] (#Assembly)
+      * [Arduino IDE] (#arduino)
+      * [Setting Up Google Spreadsheet] (#google-spreadsheet)
 
 ## Getting-Started💡 
 * [How to Solder Air Quality Sensor](https://docs.google.com/document/d/1l6jeO-1NOw7vDZXchC9iGBB8vkmnokzwbz_wixmtFyU/edit?usp=sharing)
 
-* [Air Quality Sensor Boards Assembly](https://docs.google.com/document/d/1AezJ0XiPEsc3vEHGtJqxCqGEe5GDv0d0T-DoVZDCgCY/edit?usp=sharing)
-
-* [How to Attach Sensors to Boards](https://docs.google.com/document/d/1BrGlBl2Zau5XgyUAorEzxkr_Fa7h0j_XQgn0lQ-tBvw/edit?usp=sharing)
-
-* [Installing Arduino and Getting Started](https://docs.google.com/document/d/16o8Np3GaZfSjQlxNWIgi12ycb2CosCJ2blwEGiTplbA/edit?usp=sharing)
-
-
-## Downloading Code 🐈‍⬛  
-If you are new to Github, **Welcome!** 
-Check out our guide:
-[Downloading CSL AQS Code from Github](https://docs.google.com/document/d/1Vb9AufqkUwsVKtdozXMc4aboDjLqBNuyTXmZpECdKx0/edit?usp=sharing)  where we explain how to download the necessary code for the Community Sensor Lab's Air Quality Sensor.
-
-## HTTP-Request-to-Google-Spreadsheet 🌐
-The Air Quality Sensor can post data in (almost) real-time to a spreadsheet online through HTTP methods!
-For instructions on getting the AQS connected with a Google Spreadsheet, take a look at our guide: [HTTP Posting to Google Spreadsheet](https://docs.google.com/document/d/1yNolfJr7s9rs_ewV7vN-bUsllEiPPxo2xeQbsmszQKE/edit?usp=sharing).
-<br>In our guide we provide:
-* A template specifically for the Air Quality Sensor 
-* Step-by-step instructions to using the Google Script Editor for the AQS and deploying your app script
-* Managing troubleshooting issues
-* Step-by-step instructions to then connecting your App Script to the AQS through the Arduino IDE
-
-## Parts-List 🖥 
+### Parts-List 🖥 
 Here are the materials you will need with links of where to find them. 
 
 ### FeatherM0-Microcontroller-Boards
@@ -76,6 +55,30 @@ Here are the materials you will need with links of where to find them.
 
 ## Diagram 🔦          
 <img src="images/CSL V3.0 diagram 1.png">
+
+
+## Assembly 
+* [Air Quality Sensor Boards Assembly](https://docs.google.com/document/d/1AezJ0XiPEsc3vEHGtJqxCqGEe5GDv0d0T-DoVZDCgCY/edit?usp=sharing)
+
+* [How to Attach Sensors to Boards](https://docs.google.com/document/d/1BrGlBl2Zau5XgyUAorEzxkr_Fa7h0j_XQgn0lQ-tBvw/edit?usp=sharing)
+
+* [Installing Arduino and Getting Started](https://docs.google.com/document/d/16o8Np3GaZfSjQlxNWIgi12ycb2CosCJ2blwEGiTplbA/edit?usp=sharing)
+
+
+## Downloading Code 🐈‍⬛  
+If you are new to Github, **Welcome!** 
+Check out our guide:
+[Downloading CSL AQS Code from Github](https://docs.google.com/document/d/1Vb9AufqkUwsVKtdozXMc4aboDjLqBNuyTXmZpECdKx0/edit?usp=sharing)  where we explain how to download the necessary code for the Community Sensor Lab's Air Quality Sensor.
+
+## HTTP-Request-to-Google-Spreadsheet 🌐
+The Air Quality Sensor can post data in (almost) real-time to a spreadsheet online through HTTP methods!
+For instructions on getting the AQS connected with a Google Spreadsheet, take a look at our guide: [HTTP Posting to Google Spreadsheet](https://docs.google.com/document/d/1yNolfJr7s9rs_ewV7vN-bUsllEiPPxo2xeQbsmszQKE/edit?usp=sharing).
+<br>In our guide we provide:
+* A template specifically for the Air Quality Sensor 
+* Step-by-step instructions to using the Google Script Editor for the AQS and deploying your app script
+* Managing troubleshooting issues
+* Step-by-step instructions to then connecting your App Script to the AQS through the Arduino IDE
+
 
 
 ## Solar Integration ☀️ 
