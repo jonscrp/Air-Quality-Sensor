@@ -9,7 +9,7 @@ V3 has code for the SPS30 PM2.5 and HSC differential pressure (Met Museum) senso
 
 <img src="images/air-qaulity-sensor-V2.jpeg" width="200" height = "300"> <img src="images/WIFI LOGGER CSL-AQS-V2.0.png" width="600" height = "300"> 
 <br>
-<img src="images/IMG_2107.jpg" width="400" height = "250">                    <img src="images/IMG_2110.JPG" width="400" height = "450">
+<img src="images/IMG_2107.jpg" width="400" height = "450">                    <img src="images/IMG_2110.JPG" width="400" height = "450">
 
 <br>
 
