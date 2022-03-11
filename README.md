@@ -22,7 +22,6 @@ V3 has code for the SPS30 PM2.5 and HSC differential pressure (Met Museum) senso
       * [Setting Up Google Spreadsheet](#Setting-Up-Google-Spreadsheet)
 
 ## Starting-From-Scratch💡 
-### [Guide On Soldering Air Quality Sensor](https://docs.google.com/document/d/1l6jeO-1NOw7vDZXchC9iGBB8vkmnokzwbz_wixmtFyU/edit?usp=sharing)
 
 ### Parts-List 🖥 
 Here are the materials you will need with links of where to find them. 
@@ -55,6 +54,8 @@ Here are the materials you will need with links of where to find them.
 
 ### Diagram 🔦          
 <img src="images/CSL V3.0 diagram 1.png">
+
+### [Guide On Soldering Air Quality Sensor](https://docs.google.com/document/d/1l6jeO-1NOw7vDZXchC9iGBB8vkmnokzwbz_wixmtFyU/edit?usp=sharing)
 
 ### Solar Integration ☀️ 
 The Air Quality Sensor can be powered by the sun!
