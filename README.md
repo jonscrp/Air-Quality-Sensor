@@ -16,12 +16,12 @@ V3 has code for the SPS30 PM2.5 and HSC differential pressure (Met Museum) senso
 ## Contents:
 
    * Community Sensor Lab 🌱 - Air Quality Sensor
-      * [Starting From Scratch](#Getting-Started)
+      * [Starting From Scratch](#Starting From Scratch)
       * [Assembly] (#Assembly)
       * [Arduino IDE] (#arduino)
       * [Setting Up Google Spreadsheet] (#google-spreadsheet)
 
-## Getting-Started💡 
+## Starting From Scratch💡 
 * [How to Solder Air Quality Sensor](https://docs.google.com/document/d/1l6jeO-1NOw7vDZXchC9iGBB8vkmnokzwbz_wixmtFyU/edit?usp=sharing)
 
 ### Parts-List 🖥 
