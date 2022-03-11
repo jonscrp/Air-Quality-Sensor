@@ -56,6 +56,10 @@ Here are the materials you will need with links of where to find them.
 ## Diagram 🔦          
 <img src="images/CSL V3.0 diagram 1.png">
 
+##### Solar Integration ☀️ 
+The Air Quality Sensor can be powered by the sun!
+For instructions on getting the AQS connected to a solar panel visit our document guide: [Solar Integration for the AQS](https://docs.google.com/document/d/1Q-aV4gpCV_NFu_VYhCmv1KPlE8r25asAGBMgROmjtNk/edit?usp=sharing).
+
 
 ## Assembly 
 * [Air Quality Sensor Boards Assembly](https://docs.google.com/document/d/1AezJ0XiPEsc3vEHGtJqxCqGEe5GDv0d0T-DoVZDCgCY/edit?usp=sharing)
@@ -80,10 +84,6 @@ For instructions on getting the AQS connected with a Google Spreadsheet, take a 
 * Step-by-step instructions to then connecting your App Script to the AQS through the Arduino IDE
 
 
-
-## Solar Integration ☀️ 
-The Air Quality Sensor can be powered by the sun!
-For instructions on getting the AQS connected to a solar panel visit our document guide: [Solar Integration for the AQS](https://docs.google.com/document/d/1Q-aV4gpCV_NFu_VYhCmv1KPlE8r25asAGBMgROmjtNk/edit?usp=sharing).
 
 ## Versions 🛠
 ### Air-Quality-Sensor-V3
