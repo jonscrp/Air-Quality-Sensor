@@ -38,11 +38,10 @@ V3 has code for the SPS30 PM2.5 and HSC differential pressure (Met Museum) senso
 
 ## Arduino-IDE
 * [Installing Arduino and Getting Started](https://docs.google.com/document/d/16o8Np3GaZfSjQlxNWIgi12ycb2CosCJ2blwEGiTplbA/edit?usp=sharing)
-### Downloading Code 🐈‍⬛  
+### Downloading Code From Github 🐈‍⬛  
 If you are new to Github, **Welcome!** 
 Check out our guide:
-[Downloading CSL AQS Code from Github](https://docs.google.com/document/d/1Vb9AufqkUwsVKtdozXMc4aboDjLqBNuyTXmZpECdKx0/edit?usp=sharing)  where we explain how to download the necessary code for the Community Sensor Lab's Air Quality Sensor.
-
+[Downloading CSL AQS Code from Github](https://docs.google.com/document/d/1Vb9AufqkUwsVKtdozXMc4aboDjLqBNuyTXmZpECdKx0/edit?usp=sharing)
 
 ## Setting-Up-Google-Spreadsheet
 ### HTTP-Request-to-Google-Spreadsheet 🌐
