@@ -29,15 +29,11 @@ V3 has code for the SPS30 PM2.5 and HSC differential pressure (Met Museum) senso
 [Guide On How To Solder Air Quality Sensor](https://docs.google.com/document/d/1l6jeO-1NOw7vDZXchC9iGBB8vkmnokzwbz_wixmtFyU/edit?usp=sharing)
 
 
-### Solar Integration ☀️ 
-The Air Quality Sensor can be powered by the sun!
-For instructions on getting the AQS connected to a solar panel visit our document guide: [Solar Integration for the AQS](https://docs.google.com/document/d/1Q-aV4gpCV_NFu_VYhCmv1KPlE8r25asAGBMgROmjtNk/edit?usp=sharing).
-
 
 ## Assembly 
 * [Air Quality Sensor Boards Assembly](https://docs.google.com/document/d/1AezJ0XiPEsc3vEHGtJqxCqGEe5GDv0d0T-DoVZDCgCY/edit?usp=sharing)
 
-* [How to Attach Sensors to Boards](https://docs.google.com/document/d/1BrGlBl2Zau5XgyUAorEzxkr_Fa7h0j_XQgn0lQ-tBvw/edit?usp=sharing)
+* [How to Connect Sensors to Boards](https://docs.google.com/document/d/1BrGlBl2Zau5XgyUAorEzxkr_Fa7h0j_XQgn0lQ-tBvw/edit?usp=sharing)
 
 
 ## Arduino-IDE
@@ -90,6 +86,11 @@ Here are the materials you will need with links of where to find them.
 
 ### Diagram 🔦          
 <img src="images/CSL V3.0 diagram 1.png">
+
+
+### Solar Integration ☀️ 
+The Air Quality Sensor can be powered by the sun!
+For instructions on getting the AQS connected to a solar panel visit our document guide: [Solar Integration for the AQS](https://docs.google.com/document/d/1Q-aV4gpCV_NFu_VYhCmv1KPlE8r25asAGBMgROmjtNk/edit?usp=sharing).
 
 
 ## Versions 🛠
