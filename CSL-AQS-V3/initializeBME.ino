@@ -12,7 +12,10 @@ void initializeBME()  {
     Serial.print("   ID of 0x56-0x58 represents a BMP 280,\n");
     Serial.print("        ID of 0x60 represents a BME 280.\n");
     Serial.print("        ID of 0x61 represents a BME 680.\n");
+    display.clearDisplay();display.setCursor(0, 0);
+    display.println("BME280 Not Detected");display.display();
   }
   else
-    Serial.println("BME ok");
+    Serial.println("BME Connected");
+    display.println("BME280 Connected");display.display();
 }

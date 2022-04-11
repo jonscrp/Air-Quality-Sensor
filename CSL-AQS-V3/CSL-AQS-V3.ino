@@ -1,4 +1,4 @@
-
+    
 /*
    COMMUNITY SENSOR LAB - AIR QUALITY SENSOR
 
@@ -41,6 +41,7 @@
 #include "sps30.h" // this is Paul van Haastrecht library, not Sensirion's https://github.com/paulvha/sps30.git
 #include <HoneywellTruStabilitySPI.h> // for differential pressure sensor for Met https://github.com/huilab/HoneywellTruStabilitySPI.git
 #include "arduino_secrets.h" // wifi name and password in .h file. see tab
+
 
 #define VBATPIN A7  // this is also D9 button A disable pullup to read analog
 #define BUTTON_A  9 // Oled button also A7 enable pullup to read button
@@ -153,8 +154,8 @@ void loop(void)  {
       display.clearDisplay();
       display.display();
     };
-    int sleepMS = Watchdog.sleep();// remove comment for low power
-    //delay(16000); // uncomment to debug because serial communication doesn't come back after sleeping
+    //int sleepMS = Watchdog.sleep();// remove comment for low power
+    delay(16000); // uncomment to debug because serial communication doesn't come back after sleeping
   }
   ret = sps30.wakeup(); // turn on SPS30
 }
