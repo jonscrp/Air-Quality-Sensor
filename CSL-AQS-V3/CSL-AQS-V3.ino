@@ -103,11 +103,16 @@ void loop(void)  {
   uint8_t ctr = 0;
   stat = stat & 0xEF; // clear bit 4 for CO2 sensor
 
-  float Tbme = bme.readTemperature();
-  float Pbme = bme.readPressure() / 100; // for hPa
-  float RHbme = bme.readHumidity();
+  String bmeString = readBME(); // get data string from BME280 "T, P, RH, "
+  String bme = readBME();
 
-  String bmeString = String(Tbme) + String(", ") + String(Pbme) + String(", ") + String(RHbme) + String(", ");
+  // parsing out the t p rh float values
+  float Tbme = bme.toFloat();
+  bme = bme.substring(bme.indexOf(", ") + 2);
+  float Pbme = bme.toFloat();
+  bme = bme.substring(bme.indexOf(", ") + 2);
+  float RHbme = bme.toFloat();
+  
   String co2String = readSCD30(Pbme);
 
   DateTime now;
