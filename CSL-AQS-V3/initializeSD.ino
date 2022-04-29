@@ -38,8 +38,8 @@ File initializeSD()  {
   if (!rtc.begin()) {
     Serial.println("RTC failed");
     stat = stat | 0x04; // 3rd bit set 'rtc not started'
-    display.clearDisplay();
-    display.setCursor(0, 0);
+//    display.clearDisplay();
+//    display.setCursor(0, 0);
     display.println("RTC Not ]");
     display.display();
   }
