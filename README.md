@@ -94,9 +94,9 @@ For instructions on getting the AQS connected to a solar panel visit our documen
 
 ## Versions 🛠
 ### Air-Quality-Sensor-V4
-This is currently stil being worked upon. The code has been updated to allow communication from the google sheet to the sensor and allow provisioning so that the Wifi information does not need to be inputted into the code beforehand allowing it to be more versatile. These functions haven't been fully integrated as there are still some issues so this is still in trial version.
+This is currently stil being worked upon. The code has been updated to allow communication from the google sheet to the sensor and allow provisioning so that the Wifi information does not need to be inputted into the code beforehand allowing it to be more versatile. These functions haven't been fully integrated as there are still some issues so this is still in trial version. [Upcoming-Version-4.0](https://github.com/Community-Sensor-Lab/Air-Quality-Sensor/tree/CSL-AQS-V4.0)
 ### Air-Quality-Sensor-V3
-This is our current utilized version of code for our Air Quality Sensor. The code on this page is the latest code that is stable for usage. Bigger display screen, power booster, PM 2.5 and differential pressure sensors are included in this version [Version-3](https://github.com/Community-Sensor-Lab/Air-Quality-Sensor/tree/CSL-AQS-V3.0).
+This is our current utilized version of code for our Air Quality Sensor. The code on this page is the latest code that is stable for usage. Bigger display screen, power booster, PM 2.5 and differential pressure sensors are included in this version [Version-3.0](https://github.com/Community-Sensor-Lab/Air-Quality-Sensor/tree/CSL-AQS-V3.0)
 ### Air-Quality-Sensor-V2.1
 Code from version 2.1 of the Air Quality Sensor can be seen on the branch [Version-2.1](https://github.com/Community-Sensor-Lab/Air-Quality-Sensor/tree/CSL-AQS-V2.1)
 ### Air-Quality-Sensor-v1
