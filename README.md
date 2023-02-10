@@ -10,6 +10,8 @@ V3 has code for the SPS30 PM2.5 and HSC differential pressure (Met Museum) senso
 <img src="images/csl_aqs_v3.5.jpeg" width="200" height = "300"> <img src="images/WIFI LOGGER CSL-AQS-V2.0.png" width="600" height = "300"> 
 <br>
                   <img src="images/CSL AQI long board powerboost for battery.png" width="600" height = "450">
+                  <img src="images/CSL AQI long board USB 5v power.png" width="600" height = "450">
+
 
 <br>
 
