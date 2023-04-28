@@ -37,6 +37,7 @@
 #include <Adafruit_SH110X.h>  // oled library
 #include <Adafruit_Sensor.h>
 #include <Adafruit_BME280.h>
+#include <SensirionI2CSen5x.h>
 #include <WiFi101.h>
 #include "sps30.h" // this is Paul van Haastrecht library, not Sensirion's https://github.com/paulvha/sps30.git
 #include <HoneywellTruStabilitySPI.h> // for differential pressure sensor for Met https://github.com/huilab/HoneywellTruStabilitySPI.git
@@ -49,6 +50,16 @@
 #define BUTTON_C  5 // oled button
 #define SD_CS 10    // Chip select for SD card default for Adalogger
 #define HSC_CS 12   // Chip select for Honeywell HSC diff press sensor
+#define MAXBUF_REQUIREMENT 48
+
+#if (defined(I2C_BUFFER_LENGTH) &&                 \
+     (I2C_BUFFER_LENGTH >= MAXBUF_REQUIREMENT)) || \
+    (defined(BUFFER_LENGTH) && BUFFER_LENGTH >= MAXBUF_REQUIREMENT)
+#define USE_PRODUCT_INFO
+#endif
+
+
+
 
 char ssid[] = SECRET_SSID;    // your network SSID (name)
 char password[] = SECRET_PASS;    // your network password (use for WPA, or use as key for WEP)
@@ -61,7 +72,12 @@ char header[] = "DateTime, CO2, Tco2, RHco2, Tbme, Pbme, RHbme, vbat(mV), status
 int wStatus = WL_IDLE_STATUS;
 uint16_t CO2; // for oled display
 float PM25 = 0;
+float Pmv = 0;
+float Nox = 0;
+float Voc = 0;
 
+
+SensirionI2CSen5x sen5x;
 WiFiSSLClient client; // make SSL client
 RTC_PCF8523 rtc; // Real Time Clock for RevB Adafruit logger shield
 Adafruit_SH1107 display = Adafruit_SH1107(64, 128, &Wire); // large OLED display
@@ -84,6 +100,7 @@ void setup(void) {
 
   initializeOLED();
   initializeSPS30(); // PM sensor
+  initializeSen5x(); // PM sensor
   initializeSCD30(25); // CO2 sensor to 30s more stable (1 min max recommended)
   initializeBME();      // TPRH
   initializeHSC();
@@ -105,13 +122,24 @@ void loop(void)  {
 
   String bmeString = readBME(); // get data string from BME280 "T, P, RH, "
   String bme = readBME();
-
+ 
   // parsing out the t p rh float values
   float Tbme = bme.toFloat();
   bme = bme.substring(bme.indexOf(", ") + 2);
   float Pbme = bme.toFloat();
   bme = bme.substring(bme.indexOf(", ") + 2);
   float RHbme = bme.toFloat();
+
+
+  String sen5xString = readSen5x();
+  String sen5x = readBME();
+// parsing out the values
+  // float Pm = sen5x.toFloat();
+  // bme = sen5x.substring(bme.indexOf(", ") + 2);
+  // float Pbme = bme.toFloat();
+  // bme = bme.substring(bme.indexOf(", ") + 2);
+  // float RHbme = bme.toFloat();
+
   
   String co2String = readSCD30(Pbme);
 
@@ -135,7 +163,7 @@ void loop(void)  {
   payloadUpload(String(outstr) + co2String + bmeString + String(measuredvbat) + String(", ") + String(stat) + String(", ") + pmString + hscString);
 
   Serial.println(header);
-  Serial.println(String(outstr) + co2String + bmeString + String(measuredvbat) + String(", ") + String(stat) + String(", ") + pmString + hscString);
+  Serial.println(String(outstr) + co2String + bmeString + String(measuredvbat) + String(", ") + String(stat) + String(", ") + pmString + hscString + sen5xString);
 
   logfile.println(String(outstr) + co2String + bmeString + String(measuredvbat) + String(", ") + String(stat) + String(", ") + pmString + hscString);
   logfile.flush();   // Write to disk. Uses 2048 bytes of I/O to SD card, power and takes time
@@ -152,7 +180,10 @@ void loop(void)  {
       display.print("    T C "); display.println(Tbme);
       display.print(" P mBar "); display.println(Pbme);
       display.print("    RH% "); display.println(RHbme);
-      display.print("  PM2.5 "); display.print(PM25);
+      display.print("  PM2.5 "); display.println(PM25);
+      display.print("  VOC "); display.println(Voc);
+      display.print("  NOX "); display.println(Nox);
+      display.print("  NewPM "); display.print(Pmv);
       display.display();
     }
     else  {  // turn display off
