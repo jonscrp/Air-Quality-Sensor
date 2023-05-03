@@ -27,7 +27,7 @@ String readSen5x(){
 
     String sen5xString = String(massConcentrationPm1p0) + String(", ") + String(massConcentrationPm2p5) + String(", ") + String(massConcentrationPm4p0) + String(", ") 
     + String(massConcentrationPm10p0) + String(", ") + String(ambientHumidity) + String(", ") + String(ambientTemperature) + String(", ") + String(vocIndex) + String(", ")
-    + String(noxIndex);
+    + String(noxIndex)+ String(", ");
     Pmv = massConcentrationPm2p5;
     Voc = vocIndex;
     Nox = noxIndex;
