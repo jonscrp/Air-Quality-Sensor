@@ -37,8 +37,8 @@
 #include <Adafruit_SH110X.h>  // oled library
 #include <Adafruit_Sensor.h>
 #include <Adafruit_BME280.h>
+#include <SensirionI2CSen5x.h>
 #include <WiFi101.h>
-#include "sps30.h" // this is Paul van Haastrecht library, not Sensirion's https://github.com/paulvha/sps30.git
 #include <HoneywellTruStabilitySPI.h> // for differential pressure sensor for Met https://github.com/huilab/HoneywellTruStabilitySPI.git
 #include "arduino_secrets.h" // wifi name and password in .h file. see tab
 
@@ -49,26 +49,40 @@
 #define BUTTON_C  5 // oled button
 #define SD_CS 10    // Chip select for SD card default for Adalogger
 #define HSC_CS 12   // Chip select for Honeywell HSC diff press sensor
+#define MAXBUF_REQUIREMENT 48
 
-char ssid[] = SECRET_SSID;    // your network SSID (name)
-char password[] = SECRET_PASS;    // your network password (use for WPA, or use as key for WEP)
-String POSTCommand = String("POST /macros/s/") + String(GSSD_ID) + String("/exec?value=Hello HTTP/1.1");      // Google Sheets Script Deployment ID
+#if (defined(I2C_BUFFER_LENGTH) &&                 \
+     (I2C_BUFFER_LENGTH >= MAXBUF_REQUIREMENT)) || \
+    (defined(BUFFER_LENGTH) && BUFFER_LENGTH >= MAXBUF_REQUIREMENT)
+#define USE_PRODUCT_INFO
+#endif
+
+
+
+
+//char ssid[] = SECRET_SSID;    // your network SSID (name)
+//char password[] = SECRET_PASS;    // your network password (use for WPA, or use as key for WEP)
+//String POSTCommand = String("POST /macros/s/") + String(gsidg) + String("/exec?value=Hello HTTP/1.1");      // Google Sheets Script Deployment ID
 char server[] = "script.google.com"; // name address for Google scripts as we are communicationg with the scripg (using DNS)
 // these are the commands to be sent to the google script: namely add a row to last in Sheet1 with the values TBD
 String payload_base =  "{\"command\":\"appendRow\",\"sheet_name\":\"Sheet1\",\"values\":";
 String payload = "";
 char header[] = "DateTime, CO2, Tco2, RHco2, Tbme, Pbme, RHbme, vbat(mV), status, mP1.0, mP2.5, mP4.0, mP10, ncP0.5, ncP1.0, ncP2.5, ncP4.0, ncP10, avgPartSize, Thsc, dPhsc";
-int wStatus = WL_IDLE_STATUS;
+int status = WL_IDLE_STATUS;
+String ssidg, passcodeg, gsidg;
 uint16_t CO2; // for oled display
-float PM25 = 0;
+float Pmv = 0;
+float Nox = 0;
+float Voc = 0;
 
+
+SensirionI2CSen5x sen5x;
 WiFiSSLClient client; // make SSL client
 RTC_PCF8523 rtc; // Real Time Clock for RevB Adafruit logger shield
 Adafruit_SH1107 display = Adafruit_SH1107(64, 128, &Wire); // large OLED display
 Adafruit_BME280 bme; // the bme tprh sensor
 File logfile;  // the logging file
 SCD30 CO2sensor; // sensirion SCD30 CO2 NDIR
-SPS30 sps30; // SPS30 PM2.5 sensor
 TruStabilityPressureSensor diffPresSens(HSC_CS, -100.0, 100.0 ); // HSC differential pressure sensor for Met Eric Breunitg
 
 uint8_t stat = 0; // status byte
@@ -81,14 +95,16 @@ void setup(void) {
   Serial.begin(9600);
   delay(5000);
   Serial.println(__FILE__);
+  WiFi.setPins(8, 7, 4, 2);  
 
   initializeOLED();
-  initializeSPS30(); // PM sensor
+  initializeSen5x(); // PM sensor
   initializeSCD30(25); // CO2 sensor to 30s more stable (1 min max recommended)
   initializeBME();      // TPRH
   initializeHSC();
   logfile = initializeSD(); // SD card and RTC
-  initializeWiFi();
+  AP_getInfo(ssidg, passcodeg, gsidg); 
+  //initializeWiFi();
 }
 
 char outstr[160];
@@ -105,13 +121,24 @@ void loop(void)  {
 
   String bmeString = readBME(); // get data string from BME280 "T, P, RH, "
   String bme = readBME();
-
+ 
   // parsing out the t p rh float values
   float Tbme = bme.toFloat();
   bme = bme.substring(bme.indexOf(", ") + 2);
   float Pbme = bme.toFloat();
   bme = bme.substring(bme.indexOf(", ") + 2);
   float RHbme = bme.toFloat();
+
+
+  String sen5xString = readSen5x();
+  String sen5x = readBME();
+// parsing out the values
+  // float Pm = sen5x.toFloat();
+  // bme = sen5x.substring(bme.indexOf(", ") + 2);
+  // float Pbme = bme.toFloat();
+  // bme = bme.substring(bme.indexOf(", ") + 2);
+  // float RHbme = bme.toFloat();
+
   
   String co2String = readSCD30(Pbme);
 
@@ -123,7 +150,6 @@ void loop(void)  {
   pinMode(BUTTON_A, INPUT_PULLUP);
 
   delay(5000); // wait for the sps30 to stabilize
-  String pmString = readSPS30(); // read from the PM sensor
   String hscString = readHSC(); // read the differential pressure sensor HSC
 
   //  sprintf(outstr, "%02u/%02u/%02u %02u:%02u:%02u, %.2d, %.2f, %.2f, %.2f, %.2f, %.2f, %.2f, %x, ",
@@ -132,15 +158,15 @@ void loop(void)  {
 
   sprintf(outstr, "%02u/%02u/%02u %02u:%02u:%02u, ", now.year(), now.month(), now.day(), now.hour(), now.minute(), now.second());
 
-  payloadUpload(String(outstr) + co2String + bmeString + String(measuredvbat) + String(", ") + String(stat) + String(", ") + pmString + hscString);
+  payloadUpload(String(outstr) + co2String + bmeString + String(measuredvbat) + String(", ") + String(stat) + String(", ") + sen5xString + hscString);
 
   Serial.println(header);
-  Serial.println(String(outstr) + co2String + bmeString + String(measuredvbat) + String(", ") + String(stat) + String(", ") + pmString + hscString);
+  Serial.println(String(outstr) + co2String + bmeString + String(measuredvbat) + String(", ") + String(stat) + String(", ") + hscString + sen5xString);
 
-  logfile.println(String(outstr) + co2String + bmeString + String(measuredvbat) + String(", ") + String(stat) + String(", ") + pmString + hscString);
+  logfile.println(String(outstr) + co2String + bmeString + String(measuredvbat) + String(", ") + String(stat) + String(", ") + sen5xString + hscString);
   logfile.flush();   // Write to disk. Uses 2048 bytes of I/O to SD card, power and takes time
 
-  int ret = sps30.sleep(); // turn off SPS30
+  /////////int ret = sps30.sleep(); // turn off SPS30
   // sleep cycle
   for (int i = 1; i <= 8; i++)  {  // 124s = 8x16s sleep, only toggle display
     displayState = toggleButton(BUTTON_A, displayState, buttonAstate, lastTimeToggle, timeDebounce);
@@ -152,7 +178,9 @@ void loop(void)  {
       display.print("    T C "); display.println(Tbme);
       display.print(" P mBar "); display.println(Pbme);
       display.print("    RH% "); display.println(RHbme);
-      display.print("  PM2.5 "); display.print(PM25);
+      display.print("  VOC "); display.println(Voc);
+      display.print("  NOX "); display.println(Nox);
+      display.print("  NewPM "); display.print(Pmv);
       display.display();
     }
     else  {  // turn display off
@@ -162,5 +190,5 @@ void loop(void)  {
     //int sleepMS = Watchdog.sleep();// remove comment for low power
     delay(16000); // uncomment to debug because serial communication doesn't come back after sleeping
   }
-  ret = sps30.wakeup(); // turn on SPS30
+  //////ret = sps30.wakeup(); // turn on SPS30
 }
