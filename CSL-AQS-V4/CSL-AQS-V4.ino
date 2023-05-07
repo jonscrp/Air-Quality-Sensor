@@ -58,11 +58,6 @@
 #endif
 
 
-
-
-//char ssid[] = SECRET_SSID;    // your network SSID (name)
-//char password[] = SECRET_PASS;    // your network password (use for WPA, or use as key for WEP)
-//String POSTCommand = String("POST /macros/s/") + String(gsidg) + String("/exec?value=Hello HTTP/1.1");      // Google Sheets Script Deployment ID
 char server[] = "script.google.com"; // name address for Google scripts as we are communicationg with the scripg (using DNS)
 // these are the commands to be sent to the google script: namely add a row to last in Sheet1 with the values TBD
 String payload_base =  "{\"command\":\"appendRow\",\"sheet_name\":\"Sheet1\",\"values\":";
@@ -75,7 +70,6 @@ float Pmv = 0;
 float Nox = 0;
 float Voc = 0;
 
-
 SensirionI2CSen5x sen5x;
 WiFiSSLClient client; // make SSL client
 RTC_PCF8523 rtc; // Real Time Clock for RevB Adafruit logger shield
@@ -84,7 +78,6 @@ Adafruit_BME280 bme; // the bme tprh sensor
 File logfile;  // the logging file
 SCD30 CO2sensor; // sensirion SCD30 CO2 NDIR
 TruStabilityPressureSensor diffPresSens(HSC_CS, -100.0, 100.0 ); // HSC differential pressure sensor for Met Eric Breunitg
-
 uint8_t stat = 0; // status byte
 
 void setup(void) {
@@ -132,14 +125,7 @@ void loop(void)  {
 
   String sen5xString = readSen5x();
   String sen5x = readBME();
-// parsing out the values
-  // float Pm = sen5x.toFloat();
-  // bme = sen5x.substring(bme.indexOf(", ") + 2);
-  // float Pbme = bme.toFloat();
-  // bme = bme.substring(bme.indexOf(", ") + 2);
-  // float RHbme = bme.toFloat();
 
-  
   String co2String = readSCD30(Pbme);
 
   DateTime now;
@@ -166,7 +152,6 @@ void loop(void)  {
   logfile.println(String(outstr) + co2String + bmeString + String(measuredvbat) + String(", ") + String(stat) + String(", ") + sen5xString + hscString);
   logfile.flush();   // Write to disk. Uses 2048 bytes of I/O to SD card, power and takes time
 
-  /////////int ret = sps30.sleep(); // turn off SPS30
   // sleep cycle
   for (int i = 1; i <= 8; i++)  {  // 124s = 8x16s sleep, only toggle display
     displayState = toggleButton(BUTTON_A, displayState, buttonAstate, lastTimeToggle, timeDebounce);
@@ -190,5 +175,4 @@ void loop(void)  {
     //int sleepMS = Watchdog.sleep();// remove comment for low power
     delay(16000); // uncomment to debug because serial communication doesn't come back after sleeping
   }
-  //////ret = sps30.wakeup(); // turn on SPS30
 }

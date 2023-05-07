@@ -9,7 +9,7 @@ File initializeSD()  {
     stat = stat | 0x01; // set bit 1 if SD error
   }
   else  {
-    Serial.print("startint SD card... ");
+    Serial.print("starting SD card... ");
     char filename[] = "LOG0000.TXT";  // create a new file//increase 0000
     for (uint16_t i = 0; i <= 9999; i++) {
       filename[3] = i / 1000 + '0';    //48 ascii character value of 0 //integer division by
