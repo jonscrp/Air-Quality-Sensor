@@ -5,11 +5,13 @@
  The Air Quaity Sensor (AQS) is a **low-cost**, **low-power** DIY device with sensors for **CO2**, **temp-pressure-relativehumidity**, and **PM2.5** (dust or smoke). It has an on-board logger and WiFi connectivity to Google Sheets for (almost) real time data reporting. 
 <br>
 
-V3 has code for the SPS30 PM2.5 and HSC differential pressure (Met Museum) sensors. If these are not pesent the code keeps going and reports 'no sensor' to SD log and google sheet. Additionally, keeps the start-stop for Wifi and sleeps all for ~25mA operation. Version 4 coming soon.
+V3 has code for the SPS30 PM2.5 and HSC differential pressure (Met Museum) sensors. If these are not present the code keeps going and reports 'no sensor' to SD log and google sheet. Additionally, keeps the start-stop for Wifi and sleeps all for ~25mA operation. Version 4 coming soon.
 
 <img src="images/csl_aqs_v3.5.jpeg" width="200" height = "300"> <img src="images/WIFI LOGGER CSL-AQS-V2.0.png" width="600" height = "300"> 
 <br>
-                  <img src="images/UPDATED_CSL_AQI_long_board.2_bb.png" width="600" height = "450">
+                  <img src="images/CSL AQI long board powerboost for battery.png" width="600" height = "450">
+                  <img src="images/CSL AQI long board USB 5v power.png" width="600" height = "450">
+
 
 <br>
 
@@ -63,7 +65,7 @@ Here are the materials you will need with links of where to find them.
 |----------------|-------------------------------|----------|:--------------------------:|
 |Feather M0 WiFi (WINC1500))| <img src="images/Feather-M0-WiFi.jpeg" width="200" height = "200" >  |Connects to WiFi network. Brain of the system|[Adafruit](https://www.adafruit.com/product/3010)
 |Featherwing Logger (RTC microSD)| <img src="images/Featherwing-Logger.jpeg" width="200" height = "200"> |Slot for microSD. Has a real time clock|[Adafruit](https://www.adafruit.com/product/2922)
-|Featherwing OLED  | <img src="images/Featherwing-OLED.jpeg" width="200" height = "200" >|Displays data values and can graph functions|[Adafruit](https://www.adafruit.com/product/2900)
+|Featherwing OLED  | <img src="images/Featherwing-OLED.jpeg" width="200" height = "200" >|Displays data values and can graph functions|[Adafruit](https://www.adafruit.com/product/4650)
 |Feather Terminal Block | <img src="images/Feather-Terminal-Block.jpeg" width="200" height = "200" >|Holds all the components together|[Adafruit](https://www.adafruit.com/product/2926)
 
 ### Sensors
