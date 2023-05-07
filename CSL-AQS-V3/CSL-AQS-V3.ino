@@ -60,15 +60,16 @@
 
 
 
-char ssid[] = SECRET_SSID;    // your network SSID (name)
-char password[] = SECRET_PASS;    // your network password (use for WPA, or use as key for WEP)
-String POSTCommand = String("POST /macros/s/") + String(GSSD_ID) + String("/exec?value=Hello HTTP/1.1");      // Google Sheets Script Deployment ID
+//char ssid[] = SECRET_SSID;    // your network SSID (name)
+//char password[] = SECRET_PASS;    // your network password (use for WPA, or use as key for WEP)
+//String POSTCommand = String("POST /macros/s/") + String(gsidg) + String("/exec?value=Hello HTTP/1.1");      // Google Sheets Script Deployment ID
 char server[] = "script.google.com"; // name address for Google scripts as we are communicationg with the scripg (using DNS)
 // these are the commands to be sent to the google script: namely add a row to last in Sheet1 with the values TBD
 String payload_base =  "{\"command\":\"appendRow\",\"sheet_name\":\"Sheet1\",\"values\":";
 String payload = "";
 char header[] = "DateTime, CO2, Tco2, RHco2, Tbme, Pbme, RHbme, vbat(mV), status, mP1.0, mP2.5, mP4.0, mP10, ncP0.5, ncP1.0, ncP2.5, ncP4.0, ncP10, avgPartSize, Thsc, dPhsc";
-int wStatus = WL_IDLE_STATUS;
+int status = WL_IDLE_STATUS;
+String ssidg, passcodeg, gsidg;
 uint16_t CO2; // for oled display
 float Pmv = 0;
 float Nox = 0;
@@ -94,6 +95,7 @@ void setup(void) {
   Serial.begin(9600);
   delay(5000);
   Serial.println(__FILE__);
+  WiFi.setPins(8, 7, 4, 2);  
 
   initializeOLED();
   initializeSen5x(); // PM sensor
@@ -101,7 +103,8 @@ void setup(void) {
   initializeBME();      // TPRH
   initializeHSC();
   logfile = initializeSD(); // SD card and RTC
-  initializeWiFi();
+  AP_getInfo(ssidg, passcodeg, gsidg); 
+  //initializeWiFi();
 }
 
 char outstr[160];
