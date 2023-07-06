@@ -1,5 +1,5 @@
-<topics>
-  <main>
+<details>
+  <summary>
     
 # Air Quality Sensor V4 using WiFi to Google Sheets 🌱 
 
@@ -107,9 +107,9 @@ Code from version 2.1 of the Air Quality Sensor can be seen on the branch [Versi
 ### Air-Quality-Sensor-v1
 Code from the first version of the Air Quality Sensor can be seen on the branch [Version-1](https://github.com/Community-Sensor-Lab/Air-Quality-Sensor/tree/Version-1)
 
- </main>
+ </summary>
  
- <code>
+ <summary>
    
    # .ino files
    
@@ -118,5 +118,5 @@ Code from the first version of the Air Quality Sensor can be seen on the branch 
    CSL-AQS-V4.ino
   
    ```
- </code>
-</topics>
+ </summary>
+</details>
