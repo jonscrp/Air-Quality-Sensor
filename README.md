@@ -1,5 +1,6 @@
-<details>
+<topics>
   <main>
+    
 # Air Quality Sensor V4 using WiFi to Google Sheets 🌱 
 
  Welcome to our ASRC Community Sensor Lab! We're still building this space but feel free to use the materials available. Contact [kkrueger@gc.cuny.edu](mailto:kkrueger@gc.cuny.edu) if you have any questions. We'll try to answer as soon as possible!
@@ -107,4 +108,6 @@ Code from version 2.1 of the Air Quality Sensor can be seen on the branch [Versi
 Code from the first version of the Air Quality Sensor can be seen on the branch [Version-1](https://github.com/Community-Sensor-Lab/Air-Quality-Sensor/tree/Version-1)
 
  </main>
-</details>
+ </code>
+ <code>
+</topics>
