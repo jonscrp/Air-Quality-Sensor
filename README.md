@@ -1,7 +1,5 @@
 <details>
-  <summary>
-    
-# Air Quality Sensor V4 using WiFi to Google Sheets 🌱 
+<summary> Air Quality Sensor V4 using WiFi to Google Sheets 🌱 </summary>
 
  Welcome to our ASRC Community Sensor Lab! We're still building this space but feel free to use the materials available. Contact [kkrueger@gc.cuny.edu](mailto:kkrueger@gc.cuny.edu) if you have any questions. We'll try to answer as soon as possible!
  
@@ -106,17 +104,17 @@ This is our current utilized version of code for our Air Quality Sensor. The cod
 Code from version 2.1 of the Air Quality Sensor can be seen on the branch [Version-2.1](https://github.com/Community-Sensor-Lab/Air-Quality-Sensor/tree/CSL-AQS-V2.1)
 ### Air-Quality-Sensor-v1
 Code from the first version of the Air Quality Sensor can be seen on the branch [Version-1](https://github.com/Community-Sensor-Lab/Air-Quality-Sensor/tree/Version-1)
+</details>
 
- </summary>
+ <details>
  
- <summary>
    
-   # .ino files
+   <summary> .ino files </summary>
    
    ```
    CO2_SCD30.ino
    CSL-AQS-V4.ino
   
    ```
- </summary>
-</details>
+ </details>
+
